@@ -1,0 +1,56 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- <div class="form-group">  -->
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput  formControlName="username" required>
+          <mat-error>please enter your name</mat-error>
+        </mat-form-field>
+      <!-- </div>
+      <div class="form-group"> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Firstname</mat-label>
+          <input matInput  formControlName="firstname" required>
+          <mat-error>please enter your name</mat-error>
+        </mat-form-field>
+      <!-- </div>
+    <div class="form-group"> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput  formControlName="lastname" required>
+          <mat-error>please enter your name</mat-error>
+        </mat-form-field>
+    <!-- </div>
+        <div class="form-group"> -->
+            <mat-form-field appearance="outline">
+              <mat-label>Id No:</mat-label>
+              <input matInput  formControlName="Id" required>
+              <mat-error>enter valid national card number</mat-error>
+            </mat-form-field>
+<!-- </div>
+ 
+<div class="form-group"> -->
+    <mat-form-field appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        <mat-error>Please enter valid email</mat-error>
+      </mat-form-field>
+    <!-- </div>
+    <div class="form-group"> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile no</mat-label>
+          <input matInput  formControlName="mobile" required>
+          <mat-error>please enter your name</mat-error>
+        </mat-form-field>
+        <!-- </div>
+    <div class="form-group"> -->
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput formControlName="password" required>
+        <mat-error>Password must be atleast six characters</mat-error>
+      </mat-form-field>
+    <!-- </div> -->
+  <div class="example-button-row">
+          <button mat-raised-button color="primary" (click)="onSubmit()">REGISTER</button>
+        </div>
+    
+</form>
