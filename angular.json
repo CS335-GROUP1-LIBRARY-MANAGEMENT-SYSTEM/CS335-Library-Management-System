@@ -3,21 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "libsystem2": {
+    "Web-frontend-angular": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/libsystem2",
+            "outputPath": "dist/Web-frontend-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,7 +27,10 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -51,37 +50,37 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "libsystem2:build"
+            "browserTarget": "Web-frontend-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "libsystem2:build:production"
+              "browserTarget": "Web-frontend-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "libsystem2:build"
+            "browserTarget": "Web-frontend-angular:build"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
@@ -95,7 +94,10 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
           }
         },
         "lint": {
@@ -115,16 +117,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "libsystem2:serve"
+            "devServerTarget": "Web-frontend-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "libsystem2:serve:production"
+              "devServerTarget": "Web-frontend-angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "libsystem2"
+  "defaultProject": "Web-frontend-angular"
 }
