@@ -28,7 +28,6 @@ public class BookingController {
     {
         List<BookDto> books = bookService.getBooks();
         return new ResponseEntity<>(books,HttpStatus.OK);
-
     }
 
     @PostMapping("/booking")
@@ -43,12 +42,15 @@ public class BookingController {
         return new ResponseEntity<>(book,HttpStatus.OK);
     }
 
-    @PutMapping("/editBoo/{id}")
+    @PostMapping("/editBook/{id}")
     public  ResponseEntity<Void> editBook(@PathVariable Long id){
-        bookService.editBook(id);
+         bookService.editBook(id);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-
+    @GetMapping("/user/isBorrow/{username}")
+    public ResponseEntity<Boolean> isUserBorrowABook(@PathVariable String username){
+        return new ResponseEntity<>(bookService.isUserBorrowedABook(username),HttpStatus.OK);
+    }
 
 }

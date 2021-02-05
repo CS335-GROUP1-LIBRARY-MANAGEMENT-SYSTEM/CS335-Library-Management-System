@@ -79,4 +79,28 @@ public class AuthService {
         User principal =(User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return personRepository.findByUsername(principal.getUsername()).orElseThrow(()->new SpringRedditException("user with username +"+principal.getUsername()+" no found"));
     }
+
+    @Transactional
+    public PersonDto getUserDetails(String username){
+        Person person=personRepository.findByUsername(username)
+                .orElseThrow(()->new SpringRedditException("user with username "+username+" is not found"));
+
+        PersonDto personDto=new PersonDto();
+
+        personDto.setDistrict(person.getDistrict());
+        personDto.setEmail(person.getEmail());
+        personDto.setUsername(person.getUsername());
+        personDto.setFullName(person.getFullName());
+        personDto.setPassword(person.getPassword());
+        personDto.setRegion(person.getRegion());
+        personDto.setWard(person.getWard());
+        personDto.setPhoneNumber(person.getPhoneNumber());
+        personDto.setStreet(person.getStreet());
+        personDto.setRole(person.getRole());
+        personDto.setCreatedDate(person.getCreateDate());
+        personDto.setId(person.getId());
+
+        return personDto;
+
+    }
 }

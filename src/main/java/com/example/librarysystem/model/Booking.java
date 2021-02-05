@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.Instant;
 
 @Entity
@@ -22,15 +23,16 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "Book Id must be specified")
+    @NotNull
     private Long bookId;
 
     @NotBlank(message =  "username for the user who take the book must be specified")
     private String username;
 
+    private boolean isReturned=false;
+
     private Instant timeToTake;
 
-    @NotBlank(message = "time to return must be specified")
     private Instant timeToReturn;
 
 }

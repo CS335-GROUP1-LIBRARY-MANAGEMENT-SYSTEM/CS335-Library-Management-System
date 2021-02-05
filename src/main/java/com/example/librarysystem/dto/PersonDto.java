@@ -6,11 +6,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
+import java.time.Instant;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class PersonDto {
+
+    private Long id;
 
     private String username;
 
@@ -31,5 +34,7 @@ public class PersonDto {
     private String fullName;
 
     private String role;
+
+    private Instant createdDate;
 
 }
