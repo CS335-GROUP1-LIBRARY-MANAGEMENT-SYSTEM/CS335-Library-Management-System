@@ -1,0 +1,38 @@
+.paymentIcon {
+  width: 4rem;
+  --tw-text-opacity: 1;
+  color: rgba(5, 150, 105, var(--tw-bg-opacity));
+  height: 4rem;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(110, 231, 183, var(--tw-bg-opacity));
+  margin-right: 2rem;
+
+}
+.payment-details {
+  flex-grow: 1;
+}
+.payment-details p {
+  line-height: 1.625;
+  font-size: 1rem;
+}
+.payment-details a {
+  margin-top: 0.75rem;
+  align-items: center;
+  display: inline-flex;
+  text-decoration: inherit;
+  --tw-text-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-text-opacity));
+}
+.payment-details svg {
+  width: 1rem;
+  margin-left: 0.5rem;
+  height: 1rem;
+}
+mat-card {
+  display: flex;
+}
