@@ -67,7 +67,7 @@ public class BookService {
         Book book = bookRepository.findById(bookingDto.getBookId())
                 .orElseThrow(() -> new SpringRedditException("book with id " + bookingDto.getBookId() + "  is not found"));
 
-        Optional<Booking> booking1 = bookingRepository.findTopByUsername(bookingDto.getUsername());
+        Optional<Booking> booking1 = bookingRepository.findTopByUsernameOrderByIdDesc(bookingDto.getUsername());
         Booking booking = new Booking();
 
 
@@ -116,7 +116,7 @@ public class BookService {
 
         Book bookById = bookRepository.findById(id).
                 orElseThrow(() -> new SpringRedditException("book with id " + id + "  is not found"));
-        Booking booking = bookingRepository.findTopByBookId(id)
+        Booking booking = bookingRepository.findTopByBookIdOrderByIdDesc(id)
                 .orElseThrow(() -> new SpringRedditException("book with id " + id + "  is not found in booking table"));
         booking.setReturned(true);
         bookingRepository.save(booking);
@@ -126,7 +126,7 @@ public class BookService {
 
     @Transactional
     public boolean isUserBorrowedABook(String username){
-        Optional<Booking> user = bookingRepository.findTopByUsername(username);
+        Optional<Booking> user = bookingRepository.findTopByUsernameOrderByIdDesc(username);
         return user.isPresent() && !user.get().isReturned();
     }
 

@@ -34,8 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/auth/**")
+                .antMatchers("/api/auth/login")
                 .permitAll()
+                .antMatchers("/api/auth/signup").hasAnyAuthority("ADMIN","LIBRARIAN")
+                .antMatchers(HttpMethod.POST,"/api/booking/**").hasAnyAuthority("ADMIN","LIBRARIAN")
                 .antMatchers("/v2/api-docs",
                         "/configuration/ui",
                         "/swagger-resources/**",
