@@ -1,0 +1,59 @@
+<div class="form">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+      <h2>SIGN UP</h2>
+        <div class="form-group"> 
+          <mat-form-field appearance="outline" style="width:410px">
+            <mat-label>Username</mat-label>
+            <input matInput  id="username" formControlName="username" width="200%" required>
+            <mat-error>please enter your name</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group" id="name">
+          <mat-form-field appearance="outline">
+            <mat-label>Firstname</mat-label>
+            <input matInput  formControlName="firstname" required>
+            <mat-error>please enter your name</mat-error>
+            </mat-form-field>
+        </div>
+      <div class="form-group" id="name">  
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput  formControlName="lastname" required>
+            <mat-error>please enter your name</mat-error>
+          </mat-form-field>
+      </div>
+          <div class="form-group">
+              <mat-form-field appearance="outline" style="width:410px">
+                <mat-label>Id No:</mat-label>
+                <input matInput id="IdNo" formControlName="IdNo" required>
+                <mat-error>enter valid national card number</mat-error>
+              </mat-form-field>
+  </div>
+   
+  <div class="form-group" id="contacts">
+      <mat-form-field appearance="outline">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" required>
+          <mat-error>Please enter valid email</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group" id="contacts">
+          <mat-form-field appearance="outline">
+            <mat-label>Mobile no</mat-label>
+            <input matInput  formControlName="mobile" required>
+            <mat-error>please enter your name</mat-error>
+          </mat-form-field>
+          </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline" style="width:410px">
+          <mat-label>Enter your password</mat-label>
+          <input matInput id="password" formControlName="password"  required>
+          <mat-error>Password must be atleast six characters</mat-error>
+        </mat-form-field>
+      </div>
+    <div class="example-button-row" >
+            <button mat-raised-button color="primary" style="width:410px" (click)="onSubmit()">REGISTER</button><br>
+            <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/user">or go to dashboard</button>
+          </div>
+  </form>
+  </div>
