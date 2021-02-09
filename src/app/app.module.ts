@@ -10,17 +10,22 @@ import {HttpClientModule} from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
-const routes: Routes = [
-  {path: '', component: RegistrationComponent},
+const routes: Routes =[
+  {
+    path: '', component: LandingPageComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},
-  {path: '**', component: RegistrationComponent}
+  {path: '**', component: RegistrationComponent},
+ 
 ];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
