@@ -8,8 +8,8 @@ import { PersonModel } from '../person-model';
 })
 export class UserDetailsService {
 
-  constructor() { }
-  // getUserDetails():Observable<PersonModel>{
-  //   return this.http.get<PersonModel>("https://online-library-booking.herokuapp.com/api/auth/user/details/robert");
-  //}
+  constructor(private http:HttpClient) { }
+  getUserDetails():Observable<PersonModel>{
+    return this.http.get<PersonModel>("https://online-library-booking.herokuapp.com/api/auth/user/details/robert");
+  }
 }
