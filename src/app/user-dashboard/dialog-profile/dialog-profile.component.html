@@ -1,9 +1,9 @@
 <h2 mat-dialog-title>Edit Your Profile</h2>
-<!-- <mat-dialog-content class="mat-typography"> -->
- 
-
-
-<!--</mat-dialog-content> -->
+<mat-dialog-content class="dialog">
+    
+ <app-edit-profile-form></app-edit-profile-form>
+  
+</mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Save</button>

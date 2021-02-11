@@ -15,6 +15,8 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogProfileComponent } from './dialog-profile/dialog-profile.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes: Routes = [
@@ -33,7 +35,8 @@ const routes: Routes = [
     UserInfoComponent,
     UserBooksComponent,
     UserPaymentsComponent,
-    DialogProfileComponent
+    DialogProfileComponent,
+    EditProfileFormComponent
   ],
 
   entryComponents:[DialogProfileComponent],
@@ -50,6 +53,7 @@ const routes: Routes = [
     MatTreeModule,
     MatDialogModule,
     MatFormFieldModule,
+    NgbModule
   ]
 })
 export class UserModule { }

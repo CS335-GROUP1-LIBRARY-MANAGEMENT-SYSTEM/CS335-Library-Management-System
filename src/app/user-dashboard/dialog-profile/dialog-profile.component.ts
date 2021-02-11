@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dialog-profile',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog-profile.component.css']
 })
 export class DialogProfileComponent implements OnInit {
+
+  form: FormGroup;
 
   constructor() { }
 

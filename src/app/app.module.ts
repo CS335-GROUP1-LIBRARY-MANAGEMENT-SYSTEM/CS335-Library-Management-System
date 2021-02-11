@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import  {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes: Routes =[
@@ -39,6 +40,7 @@ const routes: Routes =[
     MatButtonModule,
     RouterModule.forRoot(routes),
     MatDialogModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
