@@ -4,12 +4,13 @@
      <mat-icon>person</mat-icon>
     </div>
     <div class="userDetails">
-      <h2>Linus Torvalds</h2>
-      <p >Bsc. Student at University of dar es salaam</p>
-      <p >linustorvalds@gmail.com</p>
-      <p >+255767436237</p>
-      <p>I love reading books</p>
-      <p >And  code for fun</p>
+      <!-- <h2>{{ personModel.fullName}}</h2>
+      <p>{{ personModel.username }}</p>
+      <p >{{ personModel.email }}</p>
+      <p > {{ personModel.phoneNumber}}</p>
+      <p>{{ personModel.region}}</p> 
+       -->
+      <button mat-raised-button color="warn" (click)="openDialog()">Edit profile</button>
     </div>
   </mat-card>
 </div>

@@ -8,13 +8,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import  {MatDialogModule} from '@angular/material/dialog';
 
 const routes: Routes = [
   {path: '', component: RegistrationComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},
-  {path: '**', component: RegistrationComponent}
+  // {path: '**', component: RegistrationComponent}
 ];
 
 @NgModule({
@@ -31,6 +32,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatButtonModule,
     RouterModule.forRoot(routes),
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

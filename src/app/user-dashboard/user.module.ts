@@ -12,6 +12,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogProfileComponent } from './dialog-profile/dialog-profile.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'user', pathMatch: 'full'},
@@ -28,8 +32,11 @@ const routes: Routes = [
     UserDashboardComponent,
     UserInfoComponent,
     UserBooksComponent,
-    UserPaymentsComponent
+    UserPaymentsComponent,
+    DialogProfileComponent
   ],
+
+  entryComponents:[DialogProfileComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -41,6 +48,8 @@ const routes: Routes = [
     MatCardModule,
     MatListModule,
     MatTreeModule,
+    MatDialogModule,
+    MatFormFieldModule,
   ]
 })
 export class UserModule { }
