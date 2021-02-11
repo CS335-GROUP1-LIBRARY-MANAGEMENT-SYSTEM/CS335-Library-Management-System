@@ -10,22 +10,20 @@ import { UserDetailsService } from './service/user-details.service';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-  // personModel:PersonModel;
+  personModel:PersonModel;
 
-   constructor( public dialog: MatDialog) {}
+   constructor( public dialog: MatDialog, private userDetails:UserDetailsService) {}
 
   openDialog(){
     this.dialog.open(DialogProfileComponent);
   }
 
-  // ngOnInit(): void {
-  //   this.userDetails.getUserDetails().subscribe(data=>{
-  //     this.personModel=data;
-  //   })
-  // }
-
-  ngOnInit(){
-    
+  ngOnInit(): void {
+    this.userDetails.getUserDetails().subscribe(data=>{
+      this.personModel=data;
+    })
   }
+
+  
 
 }
