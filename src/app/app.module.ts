@@ -14,6 +14,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './auth/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 const routes: Routes = [
   {path: '', component: RegistrationComponent},
@@ -39,6 +41,8 @@ const routes: Routes = [
     MatDividerModule,
     MatIconModule,
     RouterModule.forRoot(routes),
+    ToastrModule.forRoot(),
+    NgxWebstorageModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
