@@ -16,10 +16,10 @@
         <h3>{{ personModel.fullName}}</h3>
         <p>{{ personModel.username }}</p>
         <p >{{ personModel.email }}</p>
-        <p > {{ personModel.phoneNumber}}</p>
+        <p >{{ personModel.phoneNumber}}</p>
         <p>{{ personModel.region}}</p> 
         
-        <button mat-raised-button color="warn" >Edit profile</button>
+        <button mat-raised-button color="warn"(click)="openDialog()">Edit profile</button>
       </div>
     </ng-template>
      

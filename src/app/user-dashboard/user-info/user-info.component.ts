@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog/';
 import { DialogProfileComponent } from '../dialog-profile/dialog-profile.component';
 import { PersonModel } from './person-model';
 import { UserDetailsService } from './service/user-details.service';
+import { EditProfileFormComponent } from '../edit-profile-form/edit-profile-form.component';
 
 @Component({
   selector: 'app-user-info',
@@ -21,9 +22,17 @@ export class UserInfoComponent implements OnInit {
 
    constructor( public dialog: MatDialog, private userDetails:UserDetailsService) {}
 
-  // openDialog(){
-  //   this.dialog.open(DialogProfileComponent);
-  // }
+   openDialog() {
+    const dialogRef = this.dialog.open(EditProfileFormComponent,{
+       height: '500px',
+       width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 
   ngOnInit(): void {
     this.isLoading=true;
