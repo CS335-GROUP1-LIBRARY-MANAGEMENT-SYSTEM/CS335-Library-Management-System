@@ -10,6 +10,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   {path: '', component: RegistrationComponent},
@@ -21,6 +25,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     RegistrationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,9 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
