@@ -1,0 +1,33 @@
+.form{
+    margin-top:250px;;
+    display:flex;
+    justify-content:center;
+
+}
+ .form-group {
+  padding: 0px;
+  display:block;   
+}
+
+h2{
+  color:blue;
+  display:flex;
+  text-align: center;
+}
+
+.example-button-row{
+  padding-top: 20px;
+  height:40px;
+  font-size: 35px;
+  
+}
+#name{
+  margin-right: 10px;
+  display: inline-block;
+}
+#contacts{
+  margin-right: 10px;
+  display:inline-block;
+}
+
+

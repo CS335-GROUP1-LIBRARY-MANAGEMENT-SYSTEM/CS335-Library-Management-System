@@ -1,0 +1,29 @@
+<div class="form">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <h2>LOGIN</h2>
+      <div class="form-group">
+        <mat-form-field appearance="outline" style="width:410px">
+          <mat-label>Username</mat-label>
+          <input matInput  id="username" formControlName="username" width="200%" required>
+          <mat-error>please enter username</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="outline" style="width:410px">
+          <mat-label>Password</mat-label>
+          <input matInput  id="password" formControlName="password" width="200%" required>
+          <mat-error>please enter username</mat-error>
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="example-button-row" >
+        <button mat-raised-button color="primary" style="width:410px" type="submit">LOGIN</button><br>
+      </div>
+      <div class="login-failed" *ngIf='this.isError'>
+        <p class="login-failed-text">Login Failed. Please check your credentials and try again.</p>
+      </div>
+    </form>
+  </div>
+  

@@ -3,12 +3,28 @@
     <div class="userIcon">
      <mat-icon>person</mat-icon>
     </div>
-    <div class="userDetails">
-      <h2>Linus Torvalds</h2>
-      <p >Bsc. Student at University of dar es salaam</p>
-      <p>I love reading books</p>
-      <p >And  code for fun</p>
+    <div *ngIf="isLoading;else personDetails">
+      <mat-progress-spinner
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value">
+    </mat-progress-spinner>
     </div>
+    <ng-template #personDetails>
+      <div class="userDetails">
+        <h3>{{ personModel.fullName}}</h3>
+        <p>{{ personModel.username }}</p>
+        <p >{{ personModel.email }}</p>
+        <p >{{ personModel.phoneNumber}}</p>
+        <p>{{ personModel.region}}</p> 
+        
+        <button mat-raised-button color="warn"(click)="openDialog()">Edit profile</button>
+      </div>
+    </ng-template>
+     
+   
+  
   </mat-card>
 </div>
 
