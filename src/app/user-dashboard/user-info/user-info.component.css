@@ -1,4 +1,8 @@
+
+
 .infoCard-container {
+  width: 50%;
+  height: 50%;
   padding: 1rem;
   margin: 6rem;
   --tw-bg-opacity: 1;
@@ -6,6 +10,8 @@
 }
 
 .infoCard {
+  align-content: center;
+  /* width: 40%; */
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -54,3 +60,10 @@ line-height: 1.625;
         width: 75%;
       }
     }
+.mat-button{
+  display:flex;
+  justify-content: center;
+  width: 120px;
+  align-items: end;
+  float: end;
+}

@@ -1,0 +1,40 @@
+
+<h2>Edit profile</h2>
+
+<mat-card>
+    <mat-card-content>
+        <div>
+            <mat-form-field appearance="outline">   
+                <input matInput placeholder="Full Name">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Email">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                
+              </mat-form-field>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <mat-form-field appearance="outline">   
+                <input matInput placeholder="Phone Number">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Regions">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+          </div>
+          <mat-divider></mat-divider>
+    </mat-card-content>
+</mat-card>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="warn">Save Changes</button>
+  </mat-dialog-actions>

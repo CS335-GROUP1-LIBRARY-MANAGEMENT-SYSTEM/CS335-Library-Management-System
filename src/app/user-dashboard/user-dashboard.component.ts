@@ -13,21 +13,21 @@ const TREE_DATA: FoodNode[] = [
   {
     icon: 'account_circle',
     name: 'Profile',
-    url: '/user/profile'
+    url: '/user/user/profile'
   },
   {
     icon: 'menu_book',
     name: 'My Books',
     children: [
-      {name: 'Rented', url: '/user/books'},
-      {name: 'Booked', url: '/user/books'}
+      {name: 'Rented', url: '/user/user/books'},
+      {name: 'Booked', url: '/user/user/books'}
     ]
   },
   {
     icon: 'payment',
     name: 'Payments',
     children: [
-      {name: 'Fine', url: '/user/payments'}
+      {name: 'Fine', url: '/user/user/payments'}
     ]
   }
 ];
