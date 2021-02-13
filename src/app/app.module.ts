@@ -18,7 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 
 const routes: Routes = [
-  {path: '', component: RegistrationComponent},
+ {path: '', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},
   {path: '**', component: RegistrationComponent}
 ];
