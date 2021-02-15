@@ -15,7 +15,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './auth/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
-import { NgxWebstorageModule } from 'ngx-webstorage';
+import { NgxWebstorageModule } from 'ngx-webstorage'; 
 import  {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
