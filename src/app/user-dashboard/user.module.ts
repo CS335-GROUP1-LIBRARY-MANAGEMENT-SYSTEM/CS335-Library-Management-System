@@ -17,6 +17,8 @@ import { DialogProfileComponent } from './dialog-profile/dialog-profile.componen
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -40,7 +42,7 @@ const routes: Routes = [
     EditProfileFormComponent
   ],
 
-  entryComponents:[DialogProfileComponent],
+  entryComponents: [DialogProfileComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -54,7 +56,9 @@ const routes: Routes = [
     MatTreeModule,
     MatDialogModule,
     MatFormFieldModule,
-    NgbModule
+    NgbModule,
+    MatInputModule,
+    MatProgressSpinnerModule
   ]
 })
 export class UserModule { }

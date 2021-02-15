@@ -13,15 +13,16 @@ import { EditProfileFormComponent } from '../edit-profile-form/edit-profile-form
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-  isLoading:boolean
-  personModel:PersonModel;
+  isLoading: boolean;
+  personModel: PersonModel;
 
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
   value = 50;
 
-   constructor( public dialog: MatDialog, private userDetails:UserDetailsService) {}
+   constructor( public dialog: MatDialog, private userDetails: UserDetailsService) {}
 
+  // tslint:disable-next-line:typedef
    openDialog() {
     const dialogRef = this.dialog.open(EditProfileFormComponent,{
        height: '500px',
@@ -35,13 +36,13 @@ export class UserInfoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.isLoading=true;
-    this.userDetails.getUserDetails().subscribe(data=>{
-      this.personModel=data;
-      this.isLoading=false
-    })
+    this.isLoading = true;
+    this.userDetails.getUserDetails().subscribe(data => {
+      this.personModel = data;
+      this.isLoading = false;
+    });
   }
 
-  
+
 
 }
