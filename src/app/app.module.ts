@@ -23,7 +23,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminUsersComponent } from './admin-dashboard/admin-users/admin-users.component';
 import { AdminBooksComponent } from './admin-dashboard/admin-books/admin-books.component';
-import { AdminPaymentsComponent } from './admin-dashboard/admin-payments/admin-payments.component'
+import { AdminPaymentsComponent } from './admin-dashboard/admin-payments/admin-payments.component';
 
 const routes: Routes = [
  {path: '', component: RegistrationComponent},
@@ -46,6 +46,7 @@ const routes: Routes = [
     AdminBooksComponent,
     AdminPaymentsComponent,
   ],
+    
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
