@@ -21,7 +21,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
- {path: '', component: RegistrationComponent},
+ {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
     {path: '', component: LandingPageComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},

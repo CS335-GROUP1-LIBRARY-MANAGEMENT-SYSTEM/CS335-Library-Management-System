@@ -7,16 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">books</a></li>
-        <li><a href="#">Contact</a></li>
-        <li style="float:right"><a class="active" href="#">login</a></li>
-      </ul> 
-    
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid"> 
+           <i class="fa fa-book  fa-5x" aria-hidden="true">ONLINE BOOKSTORE</i>
+          
+           <button mat-raised-button color="warn" routerLink="/login">login</button>
+        
+        </div>
+
+  </nav>  
+  <form class="form-inline" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>   
+  
       <div class="example-button-row" >
         <button mat-raised-button color="primary" style="width:410px" routerLink= "/registerForm">REGISTER</button><br>
-        <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/user">or go to dashboard</button>
-      </div>    
+      <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/user">or go to dashboard</button>
+      </div> 
 </body>
 </html>
