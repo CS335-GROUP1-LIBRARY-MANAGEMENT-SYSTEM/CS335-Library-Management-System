@@ -17,7 +17,7 @@ import { DialogProfileComponent } from './dialog-profile/dialog-profile.componen
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 
 
 const routes: Routes = [

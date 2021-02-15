@@ -67,3 +67,6 @@ line-height: 1.625;
   align-items: end;
   float: end;
 }
+.example-margin {
+  margin: 0 10px;
+}

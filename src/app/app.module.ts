@@ -19,6 +19,11 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import  {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminUsersComponent } from './admin-dashboard/admin-users/admin-users.component';
+import { AdminBooksComponent } from './admin-dashboard/admin-books/admin-books.component';
+import { AdminPaymentsComponent } from './admin-dashboard/admin-payments/admin-payments.component'
 
 const routes: Routes = [
  {path: '', component: RegistrationComponent},
@@ -36,6 +41,10 @@ const routes: Routes = [
     RegistrationComponent,
     LoginComponent,
     LandingPageComponent,
+    AdminDashboardComponent,
+    AdminUsersComponent,
+    AdminBooksComponent,
+    AdminPaymentsComponent,
   ],
   imports: [
     BrowserModule,

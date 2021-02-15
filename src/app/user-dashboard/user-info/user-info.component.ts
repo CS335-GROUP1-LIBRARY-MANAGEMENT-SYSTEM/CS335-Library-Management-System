@@ -7,13 +7,14 @@ import { PersonModel } from './person-model';
 import { UserDetailsService } from './service/user-details.service';
 import { EditProfileFormComponent } from '../edit-profile-form/edit-profile-form.component';
 
+
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-  isLoading:boolean
+  isLoading:boolean = true;
   personModel:PersonModel;
 
   color: ThemePalette = 'primary';
