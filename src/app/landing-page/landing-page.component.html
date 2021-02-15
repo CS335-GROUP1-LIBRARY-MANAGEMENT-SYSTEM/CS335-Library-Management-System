@@ -6,24 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body >
   <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container-fluid"> 
-           <i class="fa fa-book  fa-5x" aria-hidden="true">ONLINE BOOKSTORE</i>
+           <i class="fa fa-book  fa-4x" aria-hidden="true">ONLINE BOOKSTORE</i>
           
+           <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+          </form> 
+
            <button mat-raised-button color="warn" routerLink="/login">login</button>
         
         </div>
 
   </nav>  
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-success" type="submit">Search</button>
-  </form>   
+  
+<!--<div class="container-fluid padding">
+  <div class="row welcome text-center">
+    <div class="col-12">
+      <h1 class="display-4">Software engineering Team</h1>
+    </div>
+     <hr>
+  </div>
+</div>
+<div class="container-fluid padding">
+  <div class="row padding">
+
+  </div>
+</div> -->
+    
   
       <div class="example-button-row" >
         <button mat-raised-button color="primary" style="width:410px" routerLink= "/registerForm">REGISTER</button><br>
       <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/user">or go to dashboard</button>
       </div> 
+      <footer>
+        <div class="container-fluid padding">
+          <div class="row text-center">
+            <div class="col-md-4"> 
+              <hr class="light">
+              <p>contacts </p>
+              <p>location </p> 
+              <p> email</p>
+              <p>city </p>
+            </div> 
+             
+            <div class="col-md-4"> 
+              <hr class="light">
+              <p>time </p>
+              <p>weekends </p> 
+              <p> email   </p>
+              <p>city </p>
+            </div> 
+            
+            <div class="col-md-4"> 
+              <hr class="light">
+              <p>contacts </p>
+              <p>location </p> 
+              <p> email</p>
+              <p>city </p>
+            </div> 
+            <div class="col-12"> 
+              <hr class="light"> 
+              <h5>&copy;onlinebookstore.com</h5> 
+            </div> 
+          </div> 
+        </div> 
+      </footer>
 </body>
 </html>
