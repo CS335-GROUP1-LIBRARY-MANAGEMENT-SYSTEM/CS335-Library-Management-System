@@ -26,9 +26,11 @@ const routes: Routes = [
   {path: '', redirectTo: 'user', pathMatch: 'full'},
   {path: 'user', component: UserDashboardComponent,
     children: [
+      {path: '', redirectTo: 'profile', pathMatch: 'full'},
       {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
-      {path: 'payments', component: UserPaymentsComponent}
+      {path: 'payments', component: UserPaymentsComponent},
+      {path: '**', component: UserInfoComponent}
     ]}
 ];
 
@@ -50,7 +52,6 @@ const routes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatSidenavModule,
     MatCardModule,
     MatListModule,
     MatTreeModule,

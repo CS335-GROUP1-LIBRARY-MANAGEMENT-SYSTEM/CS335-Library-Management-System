@@ -16,20 +16,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './auth/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import  {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AdminUsersComponent } from './admin-dashboard/admin-users/admin-users.component';
-import { AdminBooksComponent } from './admin-dashboard/admin-books/admin-books.component';
-import { AdminPaymentsComponent } from './admin-dashboard/admin-payments/admin-payments.component';
+
 
 const routes: Routes = [
- // {path: '', component: RegistrationComponent},
-  {path: 'login', component: LoginComponent},
   {path: '', component: LandingPageComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},
+  {path: 'admin', loadChildren: () => import('./admin-dashboard/admin.module').then(mod => mod.AdminModule)},
   {path: '**', component: LandingPageComponent},
 
 ];
@@ -41,10 +37,6 @@ const routes: Routes = [
     RegistrationComponent,
     LoginComponent,
     LandingPageComponent,
-    AdminDashboardComponent,
-    AdminUsersComponent,
-    AdminBooksComponent,
-    AdminPaymentsComponent,
   ],
   imports: [
     BrowserModule,

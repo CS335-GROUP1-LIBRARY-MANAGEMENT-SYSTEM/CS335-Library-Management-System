@@ -13,21 +13,30 @@ const TREE_DATA: FoodNode[] = [
   {
     icon: 'account_circle',
     name: 'Profile',
-    url: '/user/user/profile'
+    url: '/admin/librarian/profile'
   },
   {
     icon: 'menu_book',
-    name: 'My Books',
+    name: 'Books',
     children: [
-      {name: 'Rented', url: '/user/user/books'},
-      {name: 'Booked', url: '/user/user/books'}
+      {name: 'Add', url: '/admin/librarian/books'},
+      {name: 'Rented', url: '/admin/librarian/books'}
     ]
   },
   {
     icon: 'payment',
-    name: 'Payments',
+    name: 'Fine',
     children: [
-      {name: 'Fine', url: '/user/user/payments'}
+      {name: 'late return', url: '/admin/librarian/payments'},
+      {name: 'destroyed', url: '/admin/librarian/payments'}
+    ]
+  },
+  {
+    icon: 'groups',
+    name: 'Members',
+    children: [
+      {name: 'View', url: '/admin/librarian/payment'},
+      {name: 'Add', url: '/admin/librarian/payment'}
     ]
   }
 ];
@@ -38,9 +47,9 @@ interface CheckFlatNode {
   level: number;
 }
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  selector: 'app-admin-dashboard',
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
   opened: boolean;
@@ -56,8 +65,8 @@ export class AdminDashboardComponent implements OnInit {
   );
   treeFlattener = new MatTreeFlattener(
     this._transformer, node => node.level,
-      node => node.expandable,
-      node => node.children
+    node => node.expandable,
+    node => node.children
   );
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
   constructor() {
