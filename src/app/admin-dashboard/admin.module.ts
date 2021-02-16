@@ -22,6 +22,7 @@ import {UserBooksComponent} from '../user-dashboard/user-books/user-books.compon
 import {UserPaymentsComponent} from '../user-dashboard/user-payments/user-payments.component';
 import { SearchInputComponent } from './search-input/search-input.component';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
+import {RegistrationComponent} from '../registration/registration.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
@@ -32,7 +33,8 @@ const routes: Routes = [
       {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
-      {path: '**', component: SearchInputComponent}
+      //{path: '**', component: SearchInputComponent},
+      {path:'addMember',component:RegistrationComponent}
     ]}
 ];
 

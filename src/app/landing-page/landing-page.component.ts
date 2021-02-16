@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LocalStorageService} from 'ngx-webstorage';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private localStorage:LocalStorageService) { }
 
   ngOnInit(): void {
+    this.localStorage.clear("returnUrl");
   }
 
 }

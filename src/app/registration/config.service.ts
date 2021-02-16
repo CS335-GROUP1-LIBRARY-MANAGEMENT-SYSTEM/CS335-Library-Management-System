@@ -9,17 +9,14 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class ConfigService {
 
-  url = "http://localhost:3000/register"
+  url = "https://online-library-booking.herokuapp.com/api"
 
   constructor(private http : HttpClient) { }
 
 
   /** POST: add a new hero to the database */
-createUser(user: User): Observable<User> {
-  return this.http.post<User>(this.url, user, {
-    headers:{
-      'content-type': 'application/json'
-    }
-  });
+createUser(user: User): Observable<any> {
+  return this.http.post(this.url+"/auth/signup", user,{responseType:'text'});
+  }
 }
-}
+

@@ -10,50 +10,62 @@
         </div>
         <div class="form-group" id="name">
           <mat-form-field appearance="outline">
-            <mat-label>Firstname</mat-label>
-            <input matInput  formControlName="firstname" required>
+            <mat-label>FullName</mat-label>
+            <input matInput  formControlName="fullName" required>
             <mat-error>please enter your name</mat-error>
             </mat-form-field>
         </div>
-      <div class="form-group" id="name">
-          <mat-form-field appearance="outline">
-            <mat-label>Last Name</mat-label>
-            <input matInput  formControlName="lastname" required>
-            <mat-error>please enter your name</mat-error>
-          </mat-form-field>
-      </div>
-          <div class="form-group">
-              <mat-form-field appearance="outline" style="width:410px">
-                <mat-label>Id No:</mat-label>
-                <input matInput id="IdNo" formControlName="IdNo" required>
-                <mat-error>enter valid national card number</mat-error>
-              </mat-form-field>
-  </div>
 
-  <div class="form-group" id="contacts">
+  <div class="form-group" id="ward">
       <mat-form-field appearance="outline">
+          <mat-label>Enter ward</mat-label>
+        <input matInput  formControlName="ward" required>
+        <mat-error>Please enter valid ward</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" id="street">
+        <mat-form-field appearance="outline">
+          <mat-label>Enter  street</mat-label>
+          <input matInput  formControlName="street" required>
+          <mat-error>Please enter valid street</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" id="district">
+        <mat-form-field appearance="outline">
+          <mat-label>Enter  district</mat-label>
+          <input matInput  formControlName="district" required>
+          <mat-error>Please enter valid district</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" id="region">
+        <mat-form-field appearance="outline">
+          <mat-label>Enter region</mat-label>
+          <input matInput  formControlName="region" required>
+          <mat-error>Please enter valid region</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" id="contact">
+        <mat-form-field appearance="outline">
           <mat-label>Enter your email</mat-label>
           <input matInput placeholder="pat@example.com" formControlName="email" required>
           <mat-error>Please enter valid email</mat-error>
         </mat-form-field>
       </div>
+
       <div class="form-group" id="contacts">
           <mat-form-field appearance="outline">
             <mat-label>Mobile no</mat-label>
-            <input matInput  formControlName="mobile" required>
+            <input matInput  formControlName="phoneNumber" required>
             <mat-error>please enter your name</mat-error>
           </mat-form-field>
           </div>
-      <div class="form-group">
-        <mat-form-field appearance="outline" style="width:410px">
-          <mat-label>Enter your password</mat-label>
-          <input matInput id="password" formControlName="password"  required>
-          <mat-error>Password must be atleast six characters</mat-error>
-        </mat-form-field>
-      </div>
+
     <div class="example-button-row" >
-            <button mat-raised-button color="primary" style="width:410px" (click)="onSubmit()">REGISTER</button><br>
-            <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/user/user">or go to dashboard</button>
+            <button mat-raised-button color="primary" style="width:410px" type="submit">REGISTER</button><br>
           </div>
   </form>
   </div>

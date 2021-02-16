@@ -19,15 +19,19 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {Auth2Guard} from './shared/auth2.guard';
+import {AuthGuard} from './shared/auth.guard';
 
 
 
 const routes: Routes = [
+
   {path: 'registration', component: RegistrationComponent},
+
   {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},
-  {path: 'admin', loadChildren: () => import('./admin-dashboard/admin.module').then(mod => mod.AdminModule)},
+  {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule),canActivate:[AuthGuard]},
+  {path: 'admin', loadChildren: () => import('./admin-dashboard/admin.module').then(mod => mod.AdminModule),canActivate:[Auth2Guard]},
   {path: '**', component: LandingPageComponent},
 
 ];
@@ -57,7 +61,8 @@ const routes: Routes = [
     MatDialogModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

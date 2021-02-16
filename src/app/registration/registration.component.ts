@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ConfigService } from './config.service';
+import {LocalStorageService} from 'ngx-webstorage';
+import {User} from './user.model';
 
 
 @Component({
@@ -12,32 +14,75 @@ import { ConfigService } from './config.service';
 export class RegistrationComponent implements OnInit {
   registerForm:FormGroup | any;
   submitted = true;
+  userModel:User;
+  role:string;
+  assignRole:string;
 
   constructor(private formBuilder:FormBuilder,
           private configservice: ConfigService,
-          public route: Router) { }
+          public route: Router,private localStorage:LocalStorageService) {
+
+    this.userModel={
+
+      createdDate:Date.now(),
+      district:'',
+      username: '',
+      fullName: '',
+      ward: '',
+      password: '',
+      email: '',
+      phoneNumber: '',
+      region:'',
+      role:'',
+      street:'',
+
+    }
+  }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.required],
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      IdNo: ['', Validators.required],
+      fullName: ['', Validators.required],
+      ward: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
       email: ['',Validators.required,Validators.email],
-      mobile: ['', Validators.required],
-      password: ['',Validators.required, Validators.minLength(6)],
+      street: ['', Validators.required],
+      district: ['', Validators.required],
+      region: ['', Validators.required],
+
     })
   }
   get f(){
     return(this.registerForm.controls)
   }
   onSubmit(){
-    // this.submitted = true;
-    // console.log(this.registerForm.value)
-    this.configservice.createUser(this.registerForm.value).subscribe(
-      data => console.log('success', data),
-      error =>console.error('error', error)
-    )
+    this.role=this.localStorage.retrieve("role");
+
+    this.userModel.username=this.registerForm.get('username').value;
+    this.userModel.district=this.registerForm.get('district').value;
+    this.userModel.email=this.registerForm.get('email').value;
+    this.userModel.fullName=this.registerForm.get('fullName').value;
+    this.userModel.password=this.registerForm.get('username').value;
+    this.userModel.region=this.registerForm.get('region').value;
+    this.userModel.ward=this.registerForm.get('ward').value;
+    this.userModel.street=this.registerForm.get('street').value;
+    this.userModel.phoneNumber=this.registerForm.get('phoneNumber').value;
+
+    if(this.role==="ADMIN"){
+      this.assignRole="LIBRARIAN"
+      this.userModel.role=this.assignRole;
+      this.configservice.createUser(this.userModel).subscribe(()=>{
+        this.route.navigateByUrl('/admin')
+      })
+
+    }else {
+      this.assignRole="USER"
+      this.userModel.role=this.assignRole;
+      this.configservice.createUser(this.userModel).subscribe(()=>{
+        this.route.navigateByUrl('/admin')
+      })
+    }
+
   }
 
 

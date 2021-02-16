@@ -37,8 +37,8 @@ const TREE_DATA: FoodNode[] = [
     icon: 'groups',
     name: 'Members',
     children: [
-      {name: 'View', url: '/admin/librarian/payment'},
-      {name: 'Add', url: '/admin/librarian/payment'}
+      {name: 'View', url: '/admin/librarian/view'},
+      {name: 'Add', url: '/admin/librarian/addMember'}
     ]
   }
 ];
