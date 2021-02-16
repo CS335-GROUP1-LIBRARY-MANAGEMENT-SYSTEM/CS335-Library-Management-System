@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FlatTreeControl, NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener, MatTreeNestedDataSource} from '@angular/material/tree';
+import { LocalStorageService } from 'ngx-webstorage';
 
 interface FoodNode {
   icon?: string;
@@ -52,6 +53,7 @@ interface CheckFlatNode {
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+  role:string;
   opened: boolean;
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -69,8 +71,9 @@ export class AdminDashboardComponent implements OnInit {
     node => node.children
   );
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-  constructor() {
+  constructor(private localStorage:LocalStorageService) {
     this.dataSource.data = TREE_DATA;
+    this.role=this.localStorage.retrieve('role');
   }
   hasChild = (_: number, node: CheckFlatNode) => node.expandable;
   ngOnInit(): void {

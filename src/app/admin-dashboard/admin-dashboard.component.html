@@ -2,7 +2,7 @@
   <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Admin</span>
+  <span>{{role}}</span>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="width: 16.666667%">
