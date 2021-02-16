@@ -45,6 +45,7 @@ interface CheckFlatNode {
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
+  role:string;
   opened: boolean;
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -64,6 +65,7 @@ export class UserDashboardComponent implements OnInit {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
   constructor(private localStorage:LocalStorageService, private router:Router) {
     this.dataSource.data = TREE_DATA;
+    this.role=this.localStorage.retrieve('role');
   }
   hasChild = (_: number, node: CheckFlatNode) => node.expandable;
   ngOnInit(): void {
