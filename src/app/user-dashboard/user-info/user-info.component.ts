@@ -17,7 +17,7 @@ export class UserInfoComponent implements OnInit {
   personModel: PersonModel;
 
   color: ThemePalette = 'primary';
-  mode: ProgressSpinnerMode = 'determinate';
+  mode: ProgressSpinnerMode = 'indeterminate';
   value = 50;
 
    constructor( public dialog: MatDialog, private userDetails: UserDetailsService) {}

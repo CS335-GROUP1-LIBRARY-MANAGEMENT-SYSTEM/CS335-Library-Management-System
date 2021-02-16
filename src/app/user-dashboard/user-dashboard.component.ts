@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FlatTreeControl, NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener, MatTreeNestedDataSource} from '@angular/material/tree';
+import { LocalStorageService } from 'ngx-webstorage';
+import { Router } from '@angular/router';
 
 interface FoodNode {
   icon?: string;
@@ -43,6 +45,7 @@ interface CheckFlatNode {
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
+  username:string;
   opened: boolean;
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -60,11 +63,20 @@ export class UserDashboardComponent implements OnInit {
       node => node.children
   );
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-  constructor() {
+  constructor(private localStorage:LocalStorageService, private router:Router) {
     this.dataSource.data = TREE_DATA;
+    this.username=this.localStorage.retrieve('username');
   }
   hasChild = (_: number, node: CheckFlatNode) => node.expandable;
   ngOnInit(): void {
   }
 
+  onLogout(){
+    this.localStorage.clear("authenticationtoken");
+    this.localStorage.clear("expireat");
+    this.localStorage.clear("role");
+    this.localStorage.clear("username");
+    
+    this.router.navigateByUrl('/')
+  }
 }
