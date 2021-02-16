@@ -1,0 +1,35 @@
+<mat-toolbar color="warn">
+  <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Librarian</span>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="width: 16.666667%">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" style="margin: 2rem">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding routerLink="{{node.url}}">
+        <button mat-flat-button>
+          <mat-icon style="margin-right: 0.25rem">{{node.icon}}</mat-icon>
+          {{node.name}}
+          <!--          <mat-icon  style="padding-right: 5rem"></mat-icon>-->
+        </button>
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding routerLink="{{node.url}}">
+        <button mat-flat-button matTreeNodeToggle
+                [attr.aria-label]="'Toggle ' + node.name">
+          <mat-icon style="margin-right: 0.25rem">{{node.icon}}</mat-icon>
+          {{node.name}}
+          <mat-icon class="mat-icon-rtl-mirror" style="margin-left: 1rem">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+
+      </mat-tree-node>
+    </mat-tree>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

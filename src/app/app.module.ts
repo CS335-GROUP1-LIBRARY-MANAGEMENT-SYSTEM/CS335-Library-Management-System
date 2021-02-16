@@ -16,17 +16,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './auth/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import  {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 const routes: Routes = [
  {path: 'registration', component: RegistrationComponent},
+  {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
-    {path: '', component: LandingPageComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},
+  {path: 'admin', loadChildren: () => import('./admin-dashboard/admin.module').then(mod => mod.AdminModule)},
   {path: '**', component: LandingPageComponent},
- 
+
 ];
 
 
