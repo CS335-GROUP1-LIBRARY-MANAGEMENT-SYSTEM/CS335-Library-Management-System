@@ -42,7 +42,8 @@ const routes: Routes = [
     UserBooksComponent,
     UserPaymentsComponent,
     DialogProfileComponent,
-    EditProfileFormComponent
+    EditProfileFormComponent,
+    
   ],
 
   entryComponents: [DialogProfileComponent],

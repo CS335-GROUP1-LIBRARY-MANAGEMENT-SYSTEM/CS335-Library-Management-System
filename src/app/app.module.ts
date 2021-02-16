@@ -19,11 +19,11 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { WelcomeNoteComponent } from './welcome-note/welcome-note.component';
+
 
 
 const routes: Routes = [
- {path: 'registration', component: RegistrationComponent},
+  {path: 'registration', component: RegistrationComponent},
   {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule)},
@@ -38,8 +38,7 @@ const routes: Routes = [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    LandingPageComponent,
-    WelcomeNoteComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
