@@ -19,6 +19,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WelcomeNoteComponent } from './welcome-note/welcome-note.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
     RegistrationComponent,
     LoginComponent,
     LandingPageComponent,
+    WelcomeNoteComponent,
   ],
   imports: [
     BrowserModule,

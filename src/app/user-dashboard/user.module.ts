@@ -19,6 +19,7 @@ import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
+import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 
 
 
@@ -26,7 +27,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'user', pathMatch: 'full'},
   {path: 'user', component: UserDashboardComponent,
     children: [
-      {path: '', redirectTo: 'profile', pathMatch: 'full'},
+      {path: '', component: WelcomeNoteComponent},
       {path: 'profile/:username', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
