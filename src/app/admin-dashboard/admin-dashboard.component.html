@@ -3,6 +3,8 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>{{role}}</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" (click)="onLogout()">logout</button>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="width: 16.666667%">

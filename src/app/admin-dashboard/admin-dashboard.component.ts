@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FlatTreeControl, NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener, MatTreeNestedDataSource} from '@angular/material/tree';
 import { LocalStorageService } from 'ngx-webstorage';
+import { Router } from '@angular/router';
 
 interface FoodNode {
   icon?: string;
@@ -71,12 +72,21 @@ export class AdminDashboardComponent implements OnInit {
     node => node.children
   );
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-  constructor(private localStorage:LocalStorageService) {
+  constructor(private localStorage:LocalStorageService, private router:Router) {
     this.dataSource.data = TREE_DATA;
     this.role=this.localStorage.retrieve('role');
   }
   hasChild = (_: number, node: CheckFlatNode) => node.expandable;
   ngOnInit(): void {
+  }
+
+  onLogout(){
+    this.localStorage.clear("authenticationtoken");
+    this.localStorage.clear("expireat");
+    this.localStorage.clear("role");
+    this.localStorage.clear("username");
+    
+    this.router.navigateByUrl('/')
   }
 
 }
