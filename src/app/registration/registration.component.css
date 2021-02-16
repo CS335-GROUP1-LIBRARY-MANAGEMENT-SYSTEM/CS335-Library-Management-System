@@ -1,12 +1,13 @@
 .form{
-    margin-top:250px;;
+    margin-top:50px;
+    margin-bottom: 150px;
     display:flex;
     justify-content:center;
 
 }
  .form-group {
   padding: 0px;
-  display:block;   
+  display:block;
 }
 
 h2{
@@ -19,7 +20,7 @@ h2{
   padding-top: 20px;
   height:40px;
   font-size: 35px;
-  
+
 }
 #name{
   margin-right: 10px;
