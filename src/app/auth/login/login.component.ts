@@ -12,7 +12,7 @@ import {LocalStorageService} from 'ngx-webstorage';
 })
 export class LoginComponent implements OnInit {
 
- 
+  role:string;
   loginForm:FormGroup;
   isError!:boolean;
 
@@ -46,8 +46,15 @@ export class LoginComponent implements OnInit {
           this.router.navigate([url]);
           this.toastr.success('login successfull');
         }else {
-          this.router.navigate(['/user']);
-          this.toastr.success('login successfull');
+          this.role=this.localStorageService.retrieve("role");
+          if(this.role=="USER"){
+            this.router.navigateByUrl("/user")
+            this.toastr.success('login successfull');
+          }else {
+            this.router.navigateByUrl("/admin")
+            this.toastr.success('login successfull');
+          }
+
         }
 
       }
