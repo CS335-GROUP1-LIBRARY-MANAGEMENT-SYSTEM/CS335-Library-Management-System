@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
   {path: 'librarian', component: AdminDashboardComponent,
     children: [
-      {path: '', component: SearchInputComponent},
+      //{path: '', component: SearchInputComponent},
       {path: '', component: WelcomeNoteComponent},
       {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},

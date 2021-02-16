@@ -31,7 +31,7 @@ const routes: Routes = [
       {path: 'profile/:username', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
-      {path: '**', component: UserInfoComponent}
+      {path: '', component: UserInfoComponent}
     ]}
 ];
 
