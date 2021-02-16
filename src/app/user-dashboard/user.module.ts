@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'user', component: UserDashboardComponent,
     children: [
       {path: '', redirectTo: 'profile', pathMatch: 'full'},
-      {path: 'profile', component: UserInfoComponent},
+      {path: 'profile/:username', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
       {path: '**', component: UserInfoComponent}
