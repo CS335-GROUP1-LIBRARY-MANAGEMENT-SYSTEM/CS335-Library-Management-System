@@ -27,11 +27,11 @@ const routes: Routes = [
   {path: '', redirectTo: 'user', pathMatch: 'full'},
   {path: 'user', component: UserDashboardComponent,
     children: [
-      {path: '', component: WelcomeNoteComponent},
+      {path: 'welcome', component: WelcomeNoteComponent},
       {path: 'profile/:username', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
-      {path: '', component: UserInfoComponent}
+      {path: '', component: WelcomeNoteComponent}
     ]}
 ];
 

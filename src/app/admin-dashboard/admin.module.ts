@@ -30,6 +30,7 @@ const routes: Routes = [
     children: [
       //{path: '', component: SearchInputComponent},
       {path: '', component: WelcomeNoteComponent},
+      {path: 'welcome', component: WelcomeNoteComponent},
       {path: 'profile/:username', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
