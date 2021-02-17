@@ -1,8 +1,13 @@
 export interface User {
+   createdDate:number;
+   district:string;
    username: string;
-   firstname: string;
-   lastname: string;
-   IdNo: number;
+   fullName: string;
+   ward: string;
+   password: string;
    email: string;
-   mobile: string;
+   phoneNumber: string;
+   region:string;
+   role:string;
+   street:string;
 }

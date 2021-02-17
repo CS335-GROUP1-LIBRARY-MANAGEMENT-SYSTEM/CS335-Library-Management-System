@@ -13,14 +13,18 @@
           
            <form class="form-inline" action="/action_page.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            
             <button class="btn btn-success" type="submit">Search</button>
           </form> 
 
            <button mat-raised-button color="warn" routerLink="/login">login</button>
         
-        </div>
-
+        </div>  
   </nav>  
+   <!-- <div  *ngFor=" let book of books" > 
+    <h2>{{ books.bookTitle }}</h2> 
+    
+  </div> -->
   <div class="example-button-row" >
     <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/user">or go to member dashboard</button><br>
     <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/admin">or go to Admin</button>

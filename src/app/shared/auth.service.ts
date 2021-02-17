@@ -32,6 +32,8 @@ export class AuthService {
       }));
   }
 
+
+
   getJwtToken() {
     return this.localStorageService.retrieve('authenticationToken');
   }

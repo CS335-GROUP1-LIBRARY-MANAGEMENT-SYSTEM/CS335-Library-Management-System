@@ -2,7 +2,10 @@
   <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>{{role}}</span>
+  <span>{{username}}</span>
+  <span class="example-spacer"></span>
+  <mat-icon>person</mat-icon>
+  <button mat-raised-button color="success" (click)="onLogout()">logout</button>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="width: 16.666667%">

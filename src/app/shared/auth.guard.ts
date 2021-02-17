@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
     private router:Router,
     private localStorageService:LocalStorageService) {
 }
- 
+
 canActivate(
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -29,6 +29,4 @@ canActivate(
   }
 }
 
-
-  
 }
