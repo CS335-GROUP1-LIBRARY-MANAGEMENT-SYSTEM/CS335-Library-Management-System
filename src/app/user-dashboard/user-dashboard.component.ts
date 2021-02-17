@@ -12,6 +12,13 @@ interface FoodNode {
 }
 
 const TREE_DATA: FoodNode[] = [
+
+  {
+    icon: 'home',
+    name: 'Welcome',
+    url: '/user/user/welcome'
+  },
+
   {
     icon: 'account_circle',
     name: 'Profile',

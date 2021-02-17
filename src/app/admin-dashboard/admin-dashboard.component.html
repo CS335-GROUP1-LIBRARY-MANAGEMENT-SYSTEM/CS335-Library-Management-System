@@ -4,8 +4,10 @@
   </button>
   <span>{{username}}</span>
   <span class="example-spacer"></span>
-  <mat-icon>person</mat-icon>
-  <button mat-raised-button color="success" (click)="onLogout()">logout</button>
+  
+  <button mat-raised-button color="success" (click)="onLogout()">logout
+    <mat-icon>person</mat-icon>
+  </button>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="width: 16.666667%">
