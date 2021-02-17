@@ -21,14 +21,14 @@ const TREE_DATA: FoodNode[] = [
   {
     icon: 'account_circle',
     name: 'Profile',
-    url: '/admin/librarian/profile/:username'
+    url: '/admin/librarian/profile'
   },
   {
     icon: 'menu_book',
     name: 'Books',
     children: [
       {name: 'Add', url: '/admin/librarian/books'},
-      {name: 'Rented', url: '/admin/librarian/books'}
+      {name: 'View', url: '/admin/librarian/books'}
     ]
   },
   {
@@ -91,7 +91,7 @@ export class AdminDashboardComponent implements OnInit {
     this.localStorage.clear("expireat");
     this.localStorage.clear("role");
     this.localStorage.clear("username");
-    
+
     this.router.navigateByUrl('/')
   }
 

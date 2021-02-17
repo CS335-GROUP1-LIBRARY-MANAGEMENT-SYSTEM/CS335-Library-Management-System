@@ -4,6 +4,8 @@ import {AuthService} from '../../shared/auth.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {LocalStorageService} from 'ngx-webstorage';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,10 @@ export class LoginComponent implements OnInit {
   role:string;
   loginForm:FormGroup;
   isError!:boolean;
-
+  isLoading:boolean;
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
 
 
   constructor(private formBuilder: FormBuilder
@@ -36,9 +41,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
+    this.isLoading=true;
     this.authService.login(this.loginForm.value).subscribe(loginResponse=>{
 
       if (loginResponse) {
+        this.isLoading=false
         this.isError = false;
         let url = this.localStorageService.retrieve('returnUrl')
         if (url) {
@@ -59,6 +66,7 @@ export class LoginComponent implements OnInit {
 
       }
     },()=>{
+      this.isLoading=false
       this.isError=true;
       //this.toastr.error("wrong username and password");
     })

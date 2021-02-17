@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'user', component: UserDashboardComponent,
     children: [
       {path: 'welcome', component: WelcomeNoteComponent},
-      {path: 'profile/:username', component: UserInfoComponent},
+      {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
       {path: '', component: WelcomeNoteComponent}

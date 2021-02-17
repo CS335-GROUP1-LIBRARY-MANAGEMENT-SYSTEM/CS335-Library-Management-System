@@ -1,35 +1,46 @@
 <div>
     <mat-card class="card" >
-      <div *ngFor='let member of members' class="height"> 
-              <mat-card-header>
+
+      <div  class="spinner" *ngIf="isLoading">
+        <mat-progress-spinner
+          diameter="30"
+          class="example-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value">
+        </mat-progress-spinner>
+      </div>
+
+      <div *ngFor='let member of members' class="height">
+              <mat-card-header class="cardContent">
                 <div class="content">
       <mat-card-title>{{member.fullName}}</mat-card-title>
-      <mat-card-subtitle>LB/{{member.id}}</mat-card-subtitle> 
-      <mat-card-subtitle>{{member.email}}</mat-card-subtitle>     
-      <mat-card-subtitle>{{member.phoneNumber}}</mat-card-subtitle>     
-      <mat-card-subtitle>{{member.username}}</mat-card-subtitle>     
-      <mat-card-subtitle>{{member.region}}</mat-card-subtitle>     
+      <mat-card-subtitle>LB/{{member.id}}</mat-card-subtitle>
+      <mat-card-subtitle>{{member.email}}</mat-card-subtitle>
+      <mat-card-subtitle>{{member.phoneNumber}}</mat-card-subtitle>
+      <mat-card-subtitle>{{member.username}}</mat-card-subtitle>
+      <mat-card-subtitle>{{member.region}}</mat-card-subtitle>
 
     </div>
 
     <div>
-      <div class="button">       
+      <div class="button">
         <button mat-fab color="primary" aria-label="button with a delete icon" >
           <mat-icon>create</mat-icon>
         </button>
       </div>
 
-      <div class="button">   
+      <div class="button">
         <button mat-fab color="warn" aria-label="button with a delete icon" >
           <mat-icon>delete</mat-icon>
-        </button>    
-     
+        </button>
+
     </div>
   </div>
 
     </mat-card-header>
   <mat-divider></mat-divider>
-    
+
     </div>
   </mat-card>
 </div>

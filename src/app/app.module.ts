@@ -23,6 +23,7 @@ import { ViewMembersComponent } from './view-members/view-members.component';
 import {Auth2Guard} from './shared/auth2.guard';
 import {AuthGuard} from './shared/auth.guard';
 import { BookFormComponent } from './admin-dashboard/book-form/book-form.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -48,23 +49,24 @@ const routes: Routes = [
     ViewMembersComponent,
     BookFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatIconModule,
-    RouterModule.forRoot(routes),
-    ToastrModule.forRoot(),
-    NgxWebstorageModule.forRoot(),
-    MatDialogModule,
-    NgbModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatCardModule,
+        MatDividerModule,
+        MatIconModule,
+        RouterModule.forRoot(routes),
+        ToastrModule.forRoot(),
+        NgxWebstorageModule.forRoot(),
+        MatDialogModule,
+        NgbModule,
+        MatProgressSpinnerModule,
+    ],
   providers: [
   ],
   bootstrap: [AppComponent]

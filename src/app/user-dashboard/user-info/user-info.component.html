@@ -6,6 +6,7 @@
     <div *ngIf="isLoading; else personDetails">
       <mat-progress-spinner
         class="example-margin"
+        diameter="50"
         [color]="color"
         [mode]="mode"
         [value]="value">
@@ -17,14 +18,14 @@
         <p>{{ personModel.username }}</p>
         <p >{{ personModel.email }}</p>
         <p >{{ personModel.phoneNumber}}</p>
-        <p>{{ personModel.region}}</p> 
-        
+        <p>{{ personModel.region}}</p>
+
         <button mat-raised-button  color="warn"(click)="openDialog(personModel)">Edit profile</button>
       </div>
     </ng-template>
-     
-   
-  
+
+
+
   </mat-card>
 </div>
 

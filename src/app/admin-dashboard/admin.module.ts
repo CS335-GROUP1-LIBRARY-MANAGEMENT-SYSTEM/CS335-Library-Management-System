@@ -24,15 +24,16 @@ import {UserPaymentsComponent} from '../user-dashboard/user-payments/user-paymen
 import { SearchInputComponent } from './search-input/search-input.component';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 import {RegistrationComponent} from '../registration/registration.component';
+import {ViewMembersComponent} from '../view-members/view-members.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
   {path: 'librarian', component: AdminDashboardComponent,
     children: [
-      //{path: '', component: SearchInputComponent},
+      {path: 'view', component: ViewMembersComponent},
       {path: '', component: WelcomeNoteComponent},
       {path: 'welcome', component: WelcomeNoteComponent},
-      {path: 'profile/:username', component: UserInfoComponent},
+      {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: BookFormComponent},
       {path: 'payments', component: UserPaymentsComponent},
       //{path: '**', component: SearchInputComponent},
