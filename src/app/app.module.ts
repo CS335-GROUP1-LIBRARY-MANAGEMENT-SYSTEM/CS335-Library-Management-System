@@ -19,6 +19,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgAisModule} from 'angular-instantsearch';
 
 
 const routes: Routes = [

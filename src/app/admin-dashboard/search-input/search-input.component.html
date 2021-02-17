@@ -1,1 +1,23 @@
-<p>search-input works!</p>
+<ais-instantsearch [config]="config">
+  <mat-card style="margin: 6rem; width: 65%;">
+    <ais-search-box ></ais-search-box>
+  </mat-card>
+
+  <mat-card style="margin-left: 2rem; margin-right: 2rem">
+    <ais-hits>
+      <ng-template let-hits="hits">
+        <ol class="ais-Hits-list">
+          <li *ngFor="let hit of hits" class="ais-Hits-item">
+            <img src="{{hit.image}}" alt="{{hit.name}}" align="left"/>
+            <div class="hit-name">
+              <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
+            </div>
+            <div class="hit-description">
+              <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
+            </div>
+          </li>
+        </ol>
+      </ng-template>
+    </ais-hits>
+  </mat-card>
+</ais-instantsearch>

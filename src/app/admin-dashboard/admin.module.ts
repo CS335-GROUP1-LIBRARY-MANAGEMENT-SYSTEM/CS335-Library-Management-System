@@ -21,6 +21,7 @@ import {UserInfoComponent} from '../user-dashboard/user-info/user-info.component
 import {UserBooksComponent} from '../user-dashboard/user-books/user-books.component';
 import {UserPaymentsComponent} from '../user-dashboard/user-payments/user-payments.component';
 import { SearchInputComponent } from './search-input/search-input.component';
+import {NgAisInstantSearchModule, NgAisModule} from 'angular-instantsearch';
 
 const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
@@ -56,7 +57,9 @@ const routes: Routes = [
     MatFormFieldModule,
     NgbModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgAisInstantSearchModule,
+    NgAisModule
   ]
 })
 export class AdminModule { }
