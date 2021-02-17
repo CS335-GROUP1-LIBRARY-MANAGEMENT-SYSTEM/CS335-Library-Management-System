@@ -31,9 +31,10 @@ export class UserBooksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.isLoading=true;
     this.bookService.getAllBooks().subscribe((data)=>{
       this.books=data;
+      this.isLoading=false
     })
   }
 

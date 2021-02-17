@@ -6,3 +6,8 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
+.spinner{
+  display:flex;
+  justify-content:center;
+
+}
