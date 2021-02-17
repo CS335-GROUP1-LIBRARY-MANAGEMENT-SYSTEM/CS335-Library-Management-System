@@ -20,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
+import {ToastrModule} from 'ngx-toastr';
 
 
 
@@ -27,11 +28,11 @@ const routes: Routes = [
   {path: '', redirectTo: 'user', pathMatch: 'full'},
   {path: 'user', component: UserDashboardComponent,
     children: [
-      {path: '', component: WelcomeNoteComponent},
+      {path: 'welcome', component: WelcomeNoteComponent},
       {path: 'profile/:username', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
-      {path: '', component: UserInfoComponent}
+      {path: '', component: WelcomeNoteComponent}
     ]}
 ];
 
@@ -43,11 +44,12 @@ const routes: Routes = [
     UserPaymentsComponent,
     DialogProfileComponent,
     EditProfileFormComponent,
-    
+
   ],
 
   entryComponents: [DialogProfileComponent],
   imports: [
+    ToastrModule.forRoot(),
     CommonModule,
     RouterModule.forChild(routes),
     MatSidenavModule,

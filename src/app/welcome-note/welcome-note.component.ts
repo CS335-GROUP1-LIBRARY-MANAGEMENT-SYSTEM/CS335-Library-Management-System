@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-welcome-note',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome-note.component.css']
 })
 export class WelcomeNoteComponent implements OnInit {
+  name:string;
 
-  constructor() { }
+  constructor(private localStorage:LocalStorageService) { 
+    this.name=this.localStorage.retrieve('username');
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import { MatDialog } from '@angular/material/dialog/';
@@ -23,9 +23,12 @@ export class UserInfoComponent implements OnInit {
    constructor( public dialog: MatDialog, private userDetails: UserDetailsService) {}
 
   // tslint:disable-next-line:typedef
-   openDialog() {
+   openDialog(user:PersonModel) {
     const dialogRef = this.dialog.open(EditProfileFormComponent,{
        height: '500px',
+       data:{
+        userData:user
+       },
        width: '600px',
     });
 
