@@ -1,7 +1,7 @@
 
   <div class="container">
     <div class="subContainer">
-      <div class="cardContainer">
+      <div class="cardContainer" *ngFor="let book of books">
         <mat-card>
           <div class="bookIcon">
             <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,32 +9,14 @@
             </svg>
           </div>
           <div class="book-details">
-            <h2>The Eternity</h2>
-            <p>Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-            <a>Read book
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"  viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </mat-card>
-      </div>
-
-      <div class="cardContainer">
-        <mat-card>
-          <div class="bookIcon">
-            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M31 6.13451V26.5821H17.7084L16.1407 25.0503H14.8595L13.2919 26.5821H0V6.13451H2.2553V23.4655V25.3003L3.98471 24.6872C6.89132 23.6568 9.72334 23.1559 12.6425 23.1559C13.2227 23.1559 13.8396 23.179 14.4761 23.2247L15.1349 23.2721V23.3247L15.5001 23.2983L15.8654 23.3247V23.2721L16.5242 23.2247C17.1606 23.179 17.7776 23.1559 18.3577 23.1559C21.2769 23.1559 24.1089 23.6568 27.0155 24.6872L28.745 25.3003V23.4655V6.13451H31ZM16.4311 6.1995V21.9318C17.0787 21.8853 17.7235 21.8595 18.3575 21.8595C21.4129 21.8595 24.4041 22.3862 27.4485 23.4655V4.49397C26.801 4.44313 26.1568 4.41789 25.5243 4.41789C22.4814 4.41789 19.4986 5.00249 16.4311 6.1995ZM3.55153 23.4655C6.59589 22.3862 9.58694 21.8595 12.6425 21.8595C13.2765 21.8595 13.9214 21.8853 14.5689 21.9318V6.1995C11.5013 5.00237 8.51857 4.41777 5.47569 4.41777C4.8432 4.41777 4.19903 4.44301 3.55153 4.49385V23.4655Z" fill="#F44336"/>
-            </svg>
-          </div>
-          <div class="book-details">
-            <h2>The Catalyzer</h2>
-            <p>sdfnsjfsmb s k/mdgsddgskdbgsjd/.fs;j;gfsj dvsalksjdf;laskdjf[o dsdijfl;ksdjf alsdjf lakdjf lakdjflksdjf aoj</p>
-            <a>Read book
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"  viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <h2>{{ book.bookTitle }}</h2>
+            <p>{{ book.description }}</p>
+            <div *ngIf="book.available; else bookNotAvailable">
+              <button mat-flat-button color="primary">Borrow</button>
+            </div>
+            <ng-template #bookNotAvailable>
+              <button mat-flat-button disabled>Book is not available</button>
+            </ng-template>
           </div>
         </mat-card>
       </div>
