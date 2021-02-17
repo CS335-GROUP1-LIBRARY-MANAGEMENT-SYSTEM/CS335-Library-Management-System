@@ -15,7 +15,7 @@ const TREE_DATA: FoodNode[] = [
   {
     icon: 'account_circle',
     name: 'Profile',
-    url: '/user/user/profile'
+    url: '/user/user/profile/:username'
   },
   {
     icon: 'menu_book',

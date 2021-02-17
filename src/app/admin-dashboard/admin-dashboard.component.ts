@@ -15,7 +15,7 @@ const TREE_DATA: FoodNode[] = [
   {
     icon: 'account_circle',
     name: 'Profile',
-    url: '/admin/librarian/profile'
+    url: '/admin/librarian/profile/:username'
   },
   {
     icon: 'menu_book',
@@ -37,8 +37,8 @@ const TREE_DATA: FoodNode[] = [
     icon: 'groups',
     name: 'Members',
     children: [
-      {name: 'View', url: '/admin/librarian/payment'},
-      {name: 'Add', url: '/admin/librarian/payment'}
+      {name: 'View', url: '/admin/librarian/view'},
+      {name: 'Add', url: '/admin/librarian/addMember'}
     ]
   }
 ];
@@ -54,7 +54,7 @@ interface CheckFlatNode {
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  role:string;
+  username:string;
   opened: boolean;
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -74,7 +74,7 @@ export class AdminDashboardComponent implements OnInit {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
   constructor(private localStorage:LocalStorageService, private router:Router) {
     this.dataSource.data = TREE_DATA;
-    this.role=this.localStorage.retrieve('role');
+    this.username=this.localStorage.retrieve('username');
   }
   hasChild = (_: number, node: CheckFlatNode) => node.expandable;
   ngOnInit(): void {
