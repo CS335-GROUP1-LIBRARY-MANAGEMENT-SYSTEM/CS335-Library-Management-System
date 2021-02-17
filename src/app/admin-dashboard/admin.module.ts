@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {BookFormComponent} from './book-form/book-form.component';
 import {AdminDashboardComponent} from './admin-dashboard.component';
 import {AdminUsersComponent} from './admin-users/admin-users.component';
 import {AdminBooksComponent} from './admin-books/admin-books.component';
@@ -31,7 +32,7 @@ const routes: Routes = [
       //{path: '', component: SearchInputComponent},
       {path: '', component: WelcomeNoteComponent},
       {path: 'profile/:username', component: UserInfoComponent},
-      {path: 'books', component: UserBooksComponent},
+      {path: 'books', component: BookFormComponent},
       {path: 'payments', component: UserPaymentsComponent},
       //{path: '**', component: SearchInputComponent},
       {path:'addMember',component:RegistrationComponent}
