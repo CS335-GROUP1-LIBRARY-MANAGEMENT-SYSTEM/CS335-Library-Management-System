@@ -1,23 +1,23 @@
-<ais-instantsearch [config]="config">
-  <mat-card style="margin: 6rem; width: 65%;">
-    <ais-search-box ></ais-search-box>
+<mat-card class="searchCard">
+  <form [formGroup]="SearchInputForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <button mat-button matPrefix mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <input matInput type="search"  placeholder="a book or a member" formControlName="searchInput" [(ngModel)]="term">
+      <button mat-button *ngIf="SearchInputForm.dirty" matSuffix mat-icon-button aria-label="Clear" (click)="SearchInputForm.reset()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</mat-card>
+<mat-card style="margin: 3rem">
+<div *ngFor="let book of Books | filter:term" style="margin-bottom: 1rem">
+  <mat-card>
+    <h1>{{book.bookTitle}}</h1>
+    <h2>{{book.author}}</h2>
+    <p>{{book.description}}</p>
   </mat-card>
-
-  <mat-card style="margin-left: 2rem; margin-right: 2rem">
-    <ais-hits>
-      <ng-template let-hits="hits">
-        <ol class="ais-Hits-list">
-          <li *ngFor="let hit of hits" class="ais-Hits-item">
-            <img src="{{hit.image}}" alt="{{hit.name}}" align="left"/>
-            <div class="hit-name">
-              <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
-            </div>
-            <div class="hit-description">
-              <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
-            </div>
-          </li>
-        </ol>
-      </ng-template>
-    </ais-hits>
-  </mat-card>
-</ais-instantsearch>
+</div>
+</mat-card>

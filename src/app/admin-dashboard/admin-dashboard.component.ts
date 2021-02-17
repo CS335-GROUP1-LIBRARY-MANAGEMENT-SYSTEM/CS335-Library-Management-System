@@ -13,6 +13,11 @@ interface FoodNode {
 
 const TREE_DATA: FoodNode[] = [
   {
+    icon: 'search',
+    name: 'Search',
+    url: '/admin/librarian/'
+  },
+  {
     icon: 'account_circle',
     name: 'Profile',
     url: '/admin/librarian/profile/:username'
@@ -85,7 +90,7 @@ export class AdminDashboardComponent implements OnInit {
     this.localStorage.clear("expireat");
     this.localStorage.clear("role");
     this.localStorage.clear("username");
-    
+
     this.router.navigateByUrl('/')
   }
 

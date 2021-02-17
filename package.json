@@ -28,6 +28,7 @@
     "bootstrap": "^4.6.0",
     "font-awesome": "^4.7.0",
     "instantsearch.js": "^3.7.0",
+    "ng2-search-filter": "^0.5.1",
     "ngx-toastr": "^13.2.0",
     "ngx-webstorage": "^7.0.1",
     "rxjs": "~6.6.0",

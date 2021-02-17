@@ -31,8 +31,8 @@ const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'viewMembers', component: ViewMembersComponent},
-  {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule),canActivate:[AuthGuard]},
-  {path: 'admin', loadChildren: () => import('./admin-dashboard/admin.module').then(mod => mod.AdminModule),canActivate:[Auth2Guard]},
+  {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule), canActivate: [AuthGuard]},
+  {path: 'admin', loadChildren: () => import('./admin-dashboard/admin.module').then(mod => mod.AdminModule), canActivate:[Auth2Guard]},
   {path: '**', component: LandingPageComponent},
 
 ];

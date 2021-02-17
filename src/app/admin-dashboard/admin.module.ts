@@ -24,18 +24,21 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import {NgAisInstantSearchModule, NgAisModule} from 'angular-instantsearch';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 import {RegistrationComponent} from '../registration/registration.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
   {path: 'librarian', component: AdminDashboardComponent,
     children: [
       // {path: '', component: SearchInputComponent},
-      {path: '', component: WelcomeNoteComponent},
+      {path: '', component: SearchInputComponent},
       {path: 'profile/:username', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
       {path: 'payments', component: UserPaymentsComponent},
-      //{path: '**', component: SearchInputComponent},
-      {path:'addMember',component:RegistrationComponent}
+      // {path: '**', component: SearchInputComponent},
+      {path: 'addMember', component: RegistrationComponent}
     ]}
 ];
 
@@ -64,7 +67,10 @@ const routes: Routes = [
     MatInputModule,
     MatProgressSpinnerModule,
     NgAisInstantSearchModule,
-    NgAisModule
+    NgAisModule,
+    FormsModule,
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ]
 })
 export class AdminModule { }

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import algoliasearch from 'algoliasearch/lite';
+import {FormControl, FormGroup, NgForm} from '@angular/forms';
+import {SearchService} from './search.service';
+import {BookModel} from '../../book/book';
 
-const searchClient = algoliasearch(
-  'KOG9Y9200F',
-  '3b4958db142233481bb7426509531d09'
-);
+
 
 @Component({
   selector: 'app-search-input',
@@ -12,13 +12,20 @@ const searchClient = algoliasearch(
   styleUrls: ['./search-input.component.css']
 })
 export class SearchInputComponent implements OnInit {
-  config = {
-    indexName: 'dev_cs335',
-    searchClient,
-  };
-  constructor() { }
+Books: BookModel[] = [];
+term;
+SearchInputForm = new FormGroup({
+  searchInput: new FormControl('')
+});
+  constructor(public Ss: SearchService) { }
 
   ngOnInit(): void {
+this.Ss.getBooks().subscribe((response) => {
+  this.Books = response;
+});
   }
-
+onSubmit(): void {
+    console.log(this.SearchInputForm.value);
+    this.SearchInputForm.reset();
+}
 }
