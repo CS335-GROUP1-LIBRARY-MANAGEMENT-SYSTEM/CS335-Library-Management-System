@@ -21,6 +21,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 import {ToastrModule} from 'ngx-toastr';
+import { PaymentsComponent } from './user-payments/payments/payments.component';
 
 
 
@@ -32,7 +33,7 @@ const routes: Routes = [
       {path: 'welcome', component: WelcomeNoteComponent},
       {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
-      {path: 'payments', component: UserPaymentsComponent}
+      {path: 'payments', component: PaymentsComponent}
     ]}
 ];
 
