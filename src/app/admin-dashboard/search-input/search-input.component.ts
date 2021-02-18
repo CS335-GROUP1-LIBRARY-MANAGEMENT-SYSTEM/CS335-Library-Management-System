@@ -13,6 +13,7 @@ import {BookModel} from '../../book/book';
 })
 export class SearchInputComponent implements OnInit {
 Books: BookModel[] = [];
+isLoading: boolean;
 term;
 SearchInputForm = new FormGroup({
   searchInput: new FormControl('')
@@ -20,8 +21,10 @@ SearchInputForm = new FormGroup({
   constructor(public Ss: SearchService) { }
 
   ngOnInit(): void {
-this.Ss.getBooks().subscribe((response) => {
+    this.isLoading = true;
+    this.Ss.getBooks().subscribe((response) => {
   this.Books = response;
+  this.isLoading = false;
 });
   }
 onSubmit(): void {

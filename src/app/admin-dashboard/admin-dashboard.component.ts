@@ -17,12 +17,6 @@ const TREE_DATA: FoodNode[] = [
     name: 'Welcome',
     url: '/admin/librarian/welcome'
   },
-
-  {
-    icon: 'search',
-    name: 'Search',
-    url: '/admin/librarian/search'
-  },
   {
     icon: 'account_circle',
     name: 'Profile',
@@ -32,8 +26,8 @@ const TREE_DATA: FoodNode[] = [
     icon: 'menu_book',
     name: 'Books',
     children: [
-      {name: 'Add', url: '/admin/librarian/books'},
-      {name: 'View', url: '/admin/librarian/books'}
+      {name: 'View', url: '/admin/librarian/search'},
+      {name: 'Add', url: '/admin/librarian/books'}
     ]
   },
   {
