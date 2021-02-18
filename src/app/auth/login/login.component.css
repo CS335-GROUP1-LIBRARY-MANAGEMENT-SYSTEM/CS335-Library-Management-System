@@ -22,3 +22,10 @@ h2 {
   font-weight: bold;
   color: aliceblue;
 }
+
+.forgot{
+  margin-top:40px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
