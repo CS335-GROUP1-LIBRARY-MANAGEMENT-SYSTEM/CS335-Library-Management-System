@@ -1,3 +1,18 @@
+<mat-card class="searchCard">
+  <form [formGroup]="SearchInputForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <button mat-button matPrefix mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <input matInput type="search"  placeholder="a book or a member" formControlName="searchInput" [(ngModel)]="term">
+      <button mat-button *ngIf="SearchInputForm.dirty" matSuffix mat-icon-button aria-label="Clear" (click)="SearchInputForm.reset()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</mat-card>
+
 <div>
     <mat-card class="card" >
 
@@ -11,7 +26,7 @@
         </mat-progress-spinner>
       </div>
 
-      <div *ngFor='let member of members' class="height">
+      <div *ngFor='let member of members | filter:term' class="height">
               <mat-card-header class="cardContent">
                 <div class="content">
       <mat-card-title>{{member.fullName}}</mat-card-title>

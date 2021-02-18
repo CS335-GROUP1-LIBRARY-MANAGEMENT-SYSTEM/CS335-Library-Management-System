@@ -12,6 +12,7 @@
 
 .button {
   padding-top: 30px;
+  margin-bottom: 20px;
 }
 
 .content {
@@ -22,4 +23,13 @@
   display: flex;
   justify-content: center;
   margin-top: 60px;
+}
+.searchCard {
+  max-width: 500px;
+  min-width: 100px;
+  margin: 5rem  5rem 0 30%;
+}
+.searchCard mat-form-field {
+  width: 450px;
+  min-width: 100px;
 }

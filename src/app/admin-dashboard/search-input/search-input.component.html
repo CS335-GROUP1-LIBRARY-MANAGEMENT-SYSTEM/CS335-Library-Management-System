@@ -20,4 +20,7 @@
     <p>{{book.description}}</p>
   </mat-card>
 </div>
+  <div class="spinner">
+    <mat-spinner *ngIf="isLoading" diameter="30"></mat-spinner>
+  </div>
 </mat-card>

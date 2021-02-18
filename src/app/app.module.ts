@@ -25,6 +25,7 @@ import {AuthGuard} from './shared/auth.guard';
 import { BookFormComponent } from './admin-dashboard/book-form/book-form.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {WelcomeNoteComponent} from './welcome-note/welcome-note.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 
 
@@ -50,24 +51,25 @@ const routes: Routes = [
     BookFormComponent,
     WelcomeNoteComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatInputModule,
-        MatFormFieldModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatCardModule,
-        MatDividerModule,
-        MatIconModule,
-        RouterModule.forRoot(routes),
-        ToastrModule.forRoot(),
-        NgxWebstorageModule.forRoot(),
-        MatDialogModule,
-        NgbModule,
-        MatProgressSpinnerModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    RouterModule.forRoot(routes),
+    ToastrModule.forRoot(),
+    NgxWebstorageModule.forRoot(),
+    MatDialogModule,
+    NgbModule,
+    MatProgressSpinnerModule,
+    Ng2SearchPipeModule,
+  ],
   providers: [
   ],
   bootstrap: [AppComponent]
