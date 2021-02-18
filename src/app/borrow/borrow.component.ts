@@ -11,7 +11,7 @@ export class BorrowComponent implements OnInit {
   firstFormGroup: FormGroup;
   thirdFormGroup :FormGroup;
   secondFormGroup: FormGroup;
-  isEditable = false;
+
 
   constructor(private formBuilder:FormBuilder) { }
 
@@ -24,7 +24,7 @@ export class BorrowComponent implements OnInit {
     });
 
     this.thirdFormGroup = this.formBuilder.group({
-      thirdCntrl: ['', Validators.required] 
+      thirdCtrl: ['', Validators.required] 
     })
   }
 
