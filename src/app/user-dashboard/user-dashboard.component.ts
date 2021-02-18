@@ -29,15 +29,15 @@ const TREE_DATA: FoodNode[] = [
     name: 'Books',
     children: [
 
-      {name: 'books', url: '/user/user/books'}
+      {name: 'view All', url: '/user/user/books'},
+      {name:'My book status', url:'/user/user/book-status'}
     ]
   },
   {
     icon: 'payment',
-    name: 'Payments',
+    name: 'Fine',
     children: [
-      {name: 'Fine', url: '/user/user/payments'},
-      {name:'book status', url:'/user/user/status'}
+      {name: 'View', url: '/user/user/fine'},
     ]
   }
 ];

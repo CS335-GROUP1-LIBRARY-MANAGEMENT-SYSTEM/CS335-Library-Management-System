@@ -33,7 +33,8 @@ const routes: Routes = [
       {path: 'welcome', component: WelcomeNoteComponent},
       {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
-      {path: 'payments', component: PaymentsComponent}
+      {path: 'book-status', component: PaymentsComponent},
+      {path: 'fine', component: UserPaymentsComponent}
     ]}
 ];
 
