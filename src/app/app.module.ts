@@ -11,6 +11,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from'@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './auth/login/login.component';
@@ -26,9 +28,14 @@ import { BookFormComponent } from './admin-dashboard/book-form/book-form.compone
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {WelcomeNoteComponent} from './welcome-note/welcome-note.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+<<<<<<< HEAD
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 
+=======
+import {PaymentsComponent} from './user-dashboard/user-payments/payments/payments.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+>>>>>>> c36576ccf4ffacf24ff90905d0717f3804041d1c
 
 const routes: Routes = [
 
@@ -50,7 +57,10 @@ const routes: Routes = [
     LandingPageComponent,
     ViewMembersComponent,
     BookFormComponent,
-    WelcomeNoteComponent
+    WelcomeNoteComponent,
+    PaymentsComponent,
+  
+   
   ],
   imports: [
     BrowserModule,
@@ -61,7 +71,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
+    MatDatepickerModule,
     MatDividerModule,
+    MatStepperModule,
     MatIconModule,
     RouterModule.forRoot(routes),
     ToastrModule.forRoot(),
@@ -70,7 +82,11 @@ const routes: Routes = [
     NgbModule,
     MatProgressSpinnerModule,
     Ng2SearchPipeModule,
+<<<<<<< HEAD
     MatToolbarModule,
+=======
+    MatSelectModule
+>>>>>>> c36576ccf4ffacf24ff90905d0717f3804041d1c
   ],
   providers: [
   ],
