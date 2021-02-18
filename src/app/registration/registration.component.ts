@@ -6,6 +6,7 @@ import {LocalStorageService} from 'ngx-webstorage';
 import {User} from './user.model';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder,
           private configservice: ConfigService,
-          public route: Router,private localStorage:LocalStorageService) {
+          public route: Router,private localStorage:LocalStorageService,
+              private toastr:ToastrService) {
 
     this.userModel={
 
@@ -81,6 +83,10 @@ export class RegistrationComponent implements OnInit {
       this.configservice.createUser(this.userModel).subscribe(()=>{
         this.isLoading=false;
         this.route.navigateByUrl('/admin')
+      },(err)=>{
+        this.isLoading=false;
+        this.toastr.error("fail to assign new book !!! try again")
+        console.log(err)
       })
 
     }else {
@@ -89,6 +95,10 @@ export class RegistrationComponent implements OnInit {
       this.configservice.createUser(this.userModel).subscribe(()=>{
         this.isLoading=false
         this.route.navigateByUrl('/admin')
+      },(err)=>{
+        this.isLoading=false;
+        this.toastr.error("fail to assign new user !!! try again")
+        console.log(err)
       })
     }
 
