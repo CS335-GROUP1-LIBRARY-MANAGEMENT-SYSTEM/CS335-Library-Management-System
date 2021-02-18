@@ -18,6 +18,9 @@
     <h1>{{book.bookTitle}}</h1>
     <h2>{{book.author}}</h2>
     <p>{{book.description}}</p>
+    <div *ngIf="!book.available">
+      <button mat-raised-button color="primary" style="width:410px" (click)="editBook(book)">EDIT BOOK TO AVAILABLE</button><br>
+    </div>
   </mat-card>
 </div>
   <div class="spinner">
