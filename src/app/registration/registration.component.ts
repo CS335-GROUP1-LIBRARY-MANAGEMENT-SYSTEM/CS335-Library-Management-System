@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ConfigService } from './config.service';
 import {LocalStorageService} from 'ngx-webstorage';
 import {User} from './user.model';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 
 
 @Component({
@@ -17,6 +19,10 @@ export class RegistrationComponent implements OnInit {
   userModel:User;
   role:string;
   assignRole:string;
+  isLoading:boolean;
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
 
   constructor(private formBuilder:FormBuilder,
           private configservice: ConfigService,
@@ -56,6 +62,7 @@ export class RegistrationComponent implements OnInit {
     return(this.registerForm.controls)
   }
   onSubmit(){
+    this.isLoading=true;
     this.role=this.localStorage.retrieve("role");
 
     this.userModel.username=this.registerForm.get('username').value;
@@ -72,6 +79,7 @@ export class RegistrationComponent implements OnInit {
       this.assignRole="LIBRARIAN"
       this.userModel.role=this.assignRole;
       this.configservice.createUser(this.userModel).subscribe(()=>{
+        this.isLoading=false;
         this.route.navigateByUrl('/admin')
       })
 
@@ -79,6 +87,7 @@ export class RegistrationComponent implements OnInit {
       this.assignRole="USER"
       this.userModel.role=this.assignRole;
       this.configservice.createUser(this.userModel).subscribe(()=>{
+        this.isLoading=false
         this.route.navigateByUrl('/admin')
       })
     }

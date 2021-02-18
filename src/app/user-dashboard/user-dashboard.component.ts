@@ -12,17 +12,24 @@ interface FoodNode {
 }
 
 const TREE_DATA: FoodNode[] = [
+
+  {
+    icon: 'home',
+    name: 'Welcome',
+    url: '/user/user/welcome'
+  },
+
   {
     icon: 'account_circle',
     name: 'Profile',
-    url: '/user/user/profile/:username'
+    url: '/user/user/profile'
   },
   {
     icon: 'menu_book',
-    name: 'My Books',
+    name: 'Books',
     children: [
-      {name: 'Rented', url: '/user/user/books'},
-      {name: 'Booked', url: '/user/user/books'}
+
+      {name: 'books', url: '/user/user/books'}
     ]
   },
   {
@@ -76,7 +83,7 @@ export class UserDashboardComponent implements OnInit {
     this.localStorage.clear("expireat");
     this.localStorage.clear("role");
     this.localStorage.clear("username");
-    
+
     this.router.navigateByUrl('/')
   }
 }

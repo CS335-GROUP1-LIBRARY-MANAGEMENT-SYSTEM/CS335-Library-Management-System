@@ -1,0 +1,33 @@
+<div class="form">
+    <form [formGroup]="BookForm" (ngSubmit)="onSubmit()" novalidate>
+      <h2>ADD BOOKS</h2>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width:410px">
+            <mat-label>booktitle</mat-label>
+            <input matInput  id="booktitle" formControlName="booktitle" width="200%" required>
+            <mat-error>please enter book namee</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width:410px">
+            <mat-label>Author</mat-label>
+            <input matInput  formControlName="bookauthor" required>
+            <mat-error>please enter Author</mat-error>
+            </mat-form-field>
+        </div>
+
+
+      <div class="form-group" >
+        <mat-form-field appearance="outline" style="width:410px">
+          <mat-label>Description</mat-label>
+          <input matInput  formControlName="bookdescr" required>
+          <mat-error>Enter book description</mat-error>
+        </mat-form-field>
+      </div>
+
+    <div class="example-button-row" >
+            <button mat-raised-button color="primary" style="width:410px" type="submit">ADD BOOK</button><br>
+          </div>
+  </form>
+  </div>
+

@@ -64,6 +64,16 @@
           </mat-form-field>
           </div>
 
+      <div  class="spinner" *ngIf="isLoading">
+        <mat-progress-spinner
+          diameter="30"
+          class="example-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value">
+        </mat-progress-spinner>
+      </div>
+
     <div class="example-button-row" >
             <button mat-raised-button color="primary" style="width:410px" type="submit">REGISTER</button><br>
           </div>

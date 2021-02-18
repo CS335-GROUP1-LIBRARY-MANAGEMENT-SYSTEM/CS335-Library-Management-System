@@ -22,15 +22,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewMembersComponent } from './view-members/view-members.component';
 import {Auth2Guard} from './shared/auth2.guard';
 import {AuthGuard} from './shared/auth.guard';
+import { BookFormComponent } from './admin-dashboard/book-form/book-form.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {WelcomeNoteComponent} from './welcome-note/welcome-note.component';
 
 
 
 const routes: Routes = [
 
-  {path: 'registration', component: RegistrationComponent},
   {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'viewMembers', component: ViewMembersComponent},
   {path: 'user', loadChildren: () => import('./user-dashboard/user.module').then(mod => mod.UserModule), canActivate: [AuthGuard]},
   {path: 'admin', loadChildren: () => import('./admin-dashboard/admin.module').then(mod => mod.AdminModule), canActivate:[Auth2Guard]},
   {path: '**', component: LandingPageComponent},
@@ -46,24 +47,27 @@ const routes: Routes = [
     LoginComponent,
     LandingPageComponent,
     ViewMembersComponent,
+    BookFormComponent,
+    WelcomeNoteComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatIconModule,
-    RouterModule.forRoot(routes),
-    ToastrModule.forRoot(),
-    NgxWebstorageModule.forRoot(),
-    MatDialogModule,
-    NgbModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatCardModule,
+        MatDividerModule,
+        MatIconModule,
+        RouterModule.forRoot(routes),
+        ToastrModule.forRoot(),
+        NgxWebstorageModule.forRoot(),
+        MatDialogModule,
+        NgbModule,
+        MatProgressSpinnerModule,
+    ],
   providers: [
   ],
   bootstrap: [AppComponent]

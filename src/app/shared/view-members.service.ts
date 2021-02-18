@@ -2,15 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ViewMembersModel } from '../view-members/view-members-model';
+import {LocalStorageService} from 'ngx-webstorage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ViewMembersService {
-
-  constructor(private httpClient: HttpClient) { }
+  role:String;
+  constructor(private httpClient: HttpClient,private localStorage:LocalStorageService) { }
 
   getMembers(): Observable<Array<ViewMembersModel>>{
-    return this.httpClient.get<Array<ViewMembersModel>>('https://online-library-booking.herokuapp.com/api/auth/getAllUsers')
+    this.role=this.localStorage.retrieve("role");
+    return this.httpClient.get<Array<ViewMembersModel>>('https://online-library-booking.herokuapp.com/api/auth/getAllUsers/'+this.role)
   }
 }

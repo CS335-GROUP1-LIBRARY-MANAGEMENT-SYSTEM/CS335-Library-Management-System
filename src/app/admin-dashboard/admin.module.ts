@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {BookFormComponent} from './book-form/book-form.component';
 import {AdminDashboardComponent} from './admin-dashboard.component';
 import {AdminUsersComponent} from './admin-users/admin-users.component';
 import {AdminBooksComponent} from './admin-books/admin-books.component';
@@ -21,28 +22,29 @@ import {UserInfoComponent} from '../user-dashboard/user-info/user-info.component
 import {UserBooksComponent} from '../user-dashboard/user-books/user-books.component';
 import {UserPaymentsComponent} from '../user-dashboard/user-payments/user-payments.component';
 import { SearchInputComponent } from './search-input/search-input.component';
-import {NgAisInstantSearchModule, NgAisModule} from 'angular-instantsearch';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 import {RegistrationComponent} from '../registration/registration.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {ViewMembersComponent} from '../view-members/view-members.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
   {path: 'librarian', component: AdminDashboardComponent,
     children: [
-      // {path: '', component: SearchInputComponent},
-      {path: '', component: SearchInputComponent},
-      {path: 'profile/:username', component: UserInfoComponent},
-      {path: 'books', component: UserBooksComponent},
+      {path: '', component: WelcomeNoteComponent},
+      {path: 'welcome', component: WelcomeNoteComponent},
+      {path: 'search', component: SearchInputComponent},
+      {path: 'view', component: ViewMembersComponent},
+      {path: 'profile', component: UserInfoComponent},
+      {path: 'books', component: BookFormComponent},
       {path: 'payments', component: UserPaymentsComponent},
       // {path: '**', component: SearchInputComponent},
       {path: 'addMember', component: RegistrationComponent}
     ]}
 ];
 
-// @ts-ignore
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -66,8 +68,6 @@ const routes: Routes = [
     NgbModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    NgAisInstantSearchModule,
-    NgAisModule,
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule
