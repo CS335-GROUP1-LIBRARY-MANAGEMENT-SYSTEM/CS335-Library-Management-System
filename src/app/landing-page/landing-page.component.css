@@ -1,13 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
 /* body { background:grey!important;} */
-ul {
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-  }
+  } */
   
-  li {
+  
+  /* li {
     float: left;
   }
   
@@ -22,4 +28,4 @@ ul {
   li a:hover:not(.active) {
     background-color: #111;
   }
-  
+   */
