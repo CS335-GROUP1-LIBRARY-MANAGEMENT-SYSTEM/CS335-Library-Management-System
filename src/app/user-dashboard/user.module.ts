@@ -21,6 +21,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 import {ToastrModule} from 'ngx-toastr';
+import {MatStepperModule} from '@angular/material/stepper';
 import { PaymentsComponent } from './user-payments/payments/payments.component';
 
 
@@ -65,7 +66,8 @@ const routes: Routes = [
     MatFormFieldModule,
     NgbModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatStepperModule
   ]
 })
 export class UserModule { }
