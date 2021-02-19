@@ -31,6 +31,8 @@ import {ViewMembersComponent} from '../view-members/view-members.component';
 import { BorrowComponent } from '../borrow/borrow.component';
 import {MatStepperModule} from '@angular/material/stepper'
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ReservedComponent } from './reserved/reserved.component';
+import { TakenComponent } from './taken/taken.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
@@ -45,7 +47,9 @@ const routes: Routes = [
       {path: 'payments', component: UserPaymentsComponent},
       // {path: '**', component: SearchInputComponent},
       {path: 'addMember', component: RegistrationComponent},
-      {path:'borrow', component: BorrowComponent}
+      {path:'taken', component: TakenComponent},
+      {path:'reserved', component: ReservedComponent}
+
     ]}
 ];
 
@@ -56,7 +60,9 @@ const routes: Routes = [
     AdminBooksComponent,
     AdminPaymentsComponent,
     SearchInputComponent,
-    BorrowComponent
+    BorrowComponent,
+    ReservedComponent,
+    TakenComponent
   ],
   imports: [
     CommonModule,
