@@ -47,8 +47,8 @@ const routes: Routes = [
       {path: 'books', component: BookFormComponent},
       {path: 'payments', component: UserPaymentsComponent},
       {path: 'addMember', component: RegistrationComponent},
-      {path:'taken', component: TakenComponent},
-      {path:'reserved', component: ReservedComponent}
+      {path: 'taken', component: TakenComponent},
+      {path: 'reserved', component: ReservedComponent}
 
     ]}
 ];

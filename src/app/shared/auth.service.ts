@@ -33,7 +33,7 @@ export class AuthService {
   }
 
   deleteUser(id:number):Observable<any>{
-    return this.httpModule.delete(this.apiUrl+"/auth/delete/user/"+id)
+    return this.httpModule.delete(this.apiUrl+"/auth/delete/user/"+id);
   }
 
   getJwtToken() {
