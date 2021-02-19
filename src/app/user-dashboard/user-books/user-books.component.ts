@@ -44,10 +44,11 @@ export class UserBooksComponent implements OnInit {
       this.isBook=data
       if(this.isBook){
         this.isLoading=false
-        this.toastr.error("kindly return the book to get another");
+        this.toastr.error("kindly your not allowed");
         console.log("please return the book to get another one")
       }else {
         this.username=this.localStorage.retrieve("username");
+        // @ts-ignore
         this.bookingModel={
           bookId:book.id,
           username:this.username

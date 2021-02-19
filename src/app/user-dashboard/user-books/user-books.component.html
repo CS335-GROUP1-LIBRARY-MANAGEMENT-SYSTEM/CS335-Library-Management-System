@@ -21,7 +21,7 @@
             <h2>{{ book.bookTitle }}</h2>
             <p>{{ book.description }}</p>
             <div *ngIf="book.available; else bookNotAvailable">
-              <button (click)="booking(book)" mat-flat-button color="primary">Borrow</button>
+              <button (click)="booking(book)" mat-flat-button color="primary">Reserve</button>
             </div>
             <ng-template #bookNotAvailable>
               <button mat-flat-button disabled>Book is not available</button>

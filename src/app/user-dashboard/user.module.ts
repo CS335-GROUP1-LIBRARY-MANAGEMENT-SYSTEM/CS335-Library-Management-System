@@ -22,6 +22,7 @@ import {MatInputModule} from '@angular/material/input';
 import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 import {ToastrModule} from 'ngx-toastr';
 import { PaymentsComponent } from './user-payments/payments/payments.component';
+import { BookStatusComponent } from './book-status/book-status.component';
 
 
 
@@ -33,7 +34,7 @@ const routes: Routes = [
       {path: 'welcome', component: WelcomeNoteComponent},
       {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: UserBooksComponent},
-      {path: 'book-status', component: PaymentsComponent},
+      {path: 'book-status', component: BookStatusComponent},
       {path: 'fine', component: UserPaymentsComponent}
     ]}
 ];
@@ -46,6 +47,7 @@ const routes: Routes = [
     UserPaymentsComponent,
     DialogProfileComponent,
     EditProfileFormComponent,
+    BookStatusComponent,
 
   ],
 
