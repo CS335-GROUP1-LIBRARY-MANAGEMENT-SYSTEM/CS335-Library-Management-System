@@ -35,6 +35,8 @@ import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 import {PaymentsComponent} from './user-dashboard/user-payments/payments/payments.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatChipsModule} from '@angular/material/chips';
 
 const routes: Routes = [
 
@@ -84,7 +86,9 @@ const routes: Routes = [
     MaterialFileInputModule,
     FileUploadModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers: [
   ],
