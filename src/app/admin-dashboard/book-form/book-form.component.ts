@@ -35,8 +35,7 @@ export class BookFormComponent implements OnInit {
     this.book = {
       description: '',
       bookTitle: '',
-      author: '',
-      coverImg: null
+      author: ''
     };
   }
 
@@ -45,7 +44,6 @@ export class BookFormComponent implements OnInit {
       bookTitle: ['', Validators.required],
       bookAuthor: ['', Validators.required],
       bookDescription: ['', Validators.required],
-      coverImg: ['', this.checkSizeValidator()]
 
     });
   }
@@ -54,7 +52,6 @@ export class BookFormComponent implements OnInit {
     this.book.author = this.bookForm.get('bookAuthor').value;
     this.book.description = this.bookForm.get('bookDescription').value;
     this.book.bookTitle = this.bookForm.get('bookTitle').value;
-    this.book.coverImg = this.file;
     console.log('what the book form contain', this.book);
     console.log('what the input img contain from form control', this.bookForm.get('coverImg').value);
     this.addBook.createBook(this.book).subscribe(() => {

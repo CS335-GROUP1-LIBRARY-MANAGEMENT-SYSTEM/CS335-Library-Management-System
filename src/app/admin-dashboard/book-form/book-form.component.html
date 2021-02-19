@@ -27,11 +27,11 @@
       <div class="form-group" >
         <mat-form-field appearance="outline" style="width:75%">
 <!--          <mat-label>Upload Cover Img</mat-label>-->
-          <ngx-mat-file-input #Input formControlName="coverImg" placeholder="image file name" [accept]="'image/*'" required
+          <ngx-mat-file-input #Input  placeholder="image file name" [accept]="'image/*'" required
           (change)="onFileSelected($event)"></ngx-mat-file-input>
           <span *ngIf="!Input.empty">{{fileSize | byteFormat}}</span>
           <button mat-flat-button color="primary" style="margin-bottom: 15px;font-size: 12px" matSuffix type="button">select image</button>
-          <mat-error *ngIf="bookForm.get('coverImg').hasError('required')">Book cover image Required</mat-error>
+<!--          <mat-error *ngIf="bookForm.get('coverImg').hasError('required')">Book cover image Required</mat-error>-->
 <!--          <mat-error *ngIf="BookForm.get('coverImg').hasError('overSize')">image oversize</mat-error>-->
           <mat-hint *ngIf="Input.empty">maximum image is 100kb</mat-hint>
         </mat-form-field>
