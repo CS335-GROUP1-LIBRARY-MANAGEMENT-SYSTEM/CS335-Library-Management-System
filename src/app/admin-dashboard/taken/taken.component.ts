@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+import {BookService} from '../../book/book.service';
+import {ToastrService} from 'ngx-toastr';
+import {BookStatusModel} from '../../book/book.status.model';
 
 @Component({
   selector: 'app-taken',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TakenComponent implements OnInit {
 
-  constructor() { }
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
+  isLoading:boolean;
+  takenBooks: Array<BookStatusModel>;
+
+  constructor(private bookService:BookService,private  toastr:ToastrService) { }
 
   ngOnInit(): void {
+
+    this.isLoading=true;
+    this.bookService.getAllTakenBook().subscribe((data)=>{
+      this.isLoading=false;
+      this.takenBooks=data;
+    },()=>{
+      this.isLoading=false;
+      this.toastr.error("error while loading content")
+    })
+
   }
 
 }
