@@ -28,14 +28,11 @@ import { BookFormComponent } from './admin-dashboard/book-form/book-form.compone
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {WelcomeNoteComponent} from './welcome-note/welcome-note.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
-<<<<<<< HEAD
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 
-=======
 import {PaymentsComponent} from './user-dashboard/user-payments/payments/payments.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
->>>>>>> c36576ccf4ffacf24ff90905d0717f3804041d1c
 
 const routes: Routes = [
 
@@ -82,11 +79,8 @@ const routes: Routes = [
     NgbModule,
     MatProgressSpinnerModule,
     Ng2SearchPipeModule,
-<<<<<<< HEAD
     MatToolbarModule,
-=======
     MatSelectModule
->>>>>>> c36576ccf4ffacf24ff90905d0717f3804041d1c
   ],
   providers: [
   ],
