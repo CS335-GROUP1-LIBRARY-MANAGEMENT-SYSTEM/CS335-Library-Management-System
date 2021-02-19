@@ -10,8 +10,8 @@ import {LocalStorageService} from 'ngx-webstorage';
 })
 export class BookService {
 
-  apiUrl="https://online-library-booking.herokuapp.com/api";
-  username:String
+  apiUrl = 'https://online-library-booking.herokuapp.com/api';
+  username: String
 
   constructor(private http:HttpClient,private localStorageService:LocalStorageService) { }
 

@@ -7,13 +7,13 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class AddBookService {
-  url = ""
+  url = 'https://online-library-booking.herokuapp.com/api/booking/save';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   createBook(book: Book): Observable<Book> {
     return this.http.post<Book>(this.url, book, {
-      headers:{
+      headers: {
         'content-type': 'application/json'
       }
     });

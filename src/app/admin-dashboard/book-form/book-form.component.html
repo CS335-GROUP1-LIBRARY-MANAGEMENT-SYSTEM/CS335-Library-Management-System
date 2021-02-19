@@ -2,14 +2,14 @@
     <form [formGroup]="BookForm" (ngSubmit)="onSubmit()" novalidate>
       <h2>ADD BOOKS</h2>
         <div class="form-group">
-          <mat-form-field appearance="outline" style="width:410px">
+          <mat-form-field appearance="outline" style="width:600px">
             <mat-label>booktitle</mat-label>
             <input matInput  id="booktitle" formControlName="booktitle" width="200%" required>
             <mat-error>please enter book namee</mat-error>
           </mat-form-field>
         </div>
         <div class="form-group">
-          <mat-form-field appearance="outline" style="width:410px">
+          <mat-form-field appearance="outline" style="width:600px">
             <mat-label>Author</mat-label>
             <input matInput  formControlName="bookauthor" required>
             <mat-error>please enter Author</mat-error>
@@ -18,15 +18,33 @@
 
 
       <div class="form-group" >
-        <mat-form-field appearance="outline" style="width:410px">
+        <mat-form-field appearance="outline" style="width:600px">
           <mat-label>Description</mat-label>
           <input matInput  formControlName="bookdescr" required>
           <mat-error>Enter book description</mat-error>
         </mat-form-field>
       </div>
+      <div class="form-group" >
+        <mat-form-field appearance="outline" style="width:75%">
+<!--          <mat-label>Upload Cover Img</mat-label>-->
+          <ngx-mat-file-input #Input formControlName="coverImg" placeholder="image file name" [accept]="'image/*'" required
+          (change)="onFileSelected($event)"></ngx-mat-file-input>
+          <span *ngIf="!Input.empty">{{fileSize | byteFormat}}</span>
+          <button mat-flat-button color="primary" style="margin-bottom: 15px;font-size: 12px" matSuffix>select image</button>
+          <mat-error *ngIf="BookForm.get('coverImg').hasError('required')">Book cover image Required</mat-error>
+<!--          <mat-error *ngIf="BookForm.get('coverImg').hasError('overSize')">image oversize</mat-error>-->
+          <mat-hint *ngIf="Input.empty">maximum image is 100kb</mat-hint>
+        </mat-form-field>
+
+<!--        <button mat-flat-button style="background-color: green;color: white;margin-left: 10px">upload</button>-->
+        <button mat-flat-button style="background-color: red;color: white;margin-left: 30px" *ngIf="!Input.empty;else disabled"
+       (click)="Input.clear($event)" >remove</button>
+        <ng-template #disabled>
+          <button mat-flat-button style="margin-left: 30px"  disabled>remove</button></ng-template>
+      </div>
 
     <div class="example-button-row" >
-            <button mat-raised-button color="primary" style="width:410px" type="submit">ADD BOOK</button><br>
+            <button mat-raised-button color="primary" style="width:600px" type="submit">ADD BOOK</button><br>
           </div>
   </form>
   </div>

@@ -26,6 +26,8 @@ import { BookFormComponent } from './admin-dashboard/book-form/book-form.compone
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {WelcomeNoteComponent} from './welcome-note/welcome-note.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {MaterialFileInputModule} from 'ngx-material-file-input';
+import {FileUploadModule} from 'ng2-file-upload';
 
 
 
@@ -69,6 +71,8 @@ const routes: Routes = [
     NgbModule,
     MatProgressSpinnerModule,
     Ng2SearchPipeModule,
+    MaterialFileInputModule,
+    FileUploadModule,
   ],
   providers: [
   ],
