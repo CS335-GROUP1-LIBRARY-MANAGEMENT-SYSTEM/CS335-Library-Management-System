@@ -31,4 +31,9 @@ export class BookService {
   setBooking(bookingModel:BookingModel): Observable<any>{
     return this.http.post(this.apiUrl+'/booking/booking', bookingModel)
   }
+
+  getUserBookStatusDetails():Observable<BookingModel>{
+    this.username=this.localStorageService.retrieve("username");
+    return this.http.get<BookingModel>(this.apiUrl+"/booking/user/bookStatus/"+this.username);
+  }
 }
