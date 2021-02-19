@@ -4,6 +4,8 @@ import { ViewMembersModel } from './view-members-model';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import {FormControl, FormGroup} from '@angular/forms';
+import {AuthService} from '../shared/auth.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-view-members',
@@ -21,7 +23,9 @@ export class ViewMembersComponent implements OnInit {
   SearchInputForm = new FormGroup({
     searchInput: new FormControl('')
   });
-  constructor(private viewMember: ViewMembersService) { }
+  constructor(private viewMember: ViewMembersService
+              ,private authService:AuthService,
+              private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -34,5 +38,16 @@ export class ViewMembersComponent implements OnInit {
   onSubmit(): void {
     console.log(this.SearchInputForm.value);
     this.SearchInputForm.reset();
+  }
+
+  deleteUser(id:number) {
+    this.isLoading=true;
+    this.authService.deleteUser(id).subscribe(()=>{
+      this.isLoading=false;
+      this.ngOnInit();
+    },()=>{
+      this.isLoading=false;
+      this.toastr.error("error deleting the user")
+    })
   }
 }
