@@ -1,35 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body >
-  <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <div class="container-fluid"> 
-           <i class="fa fa-book  fa-4x" aria-hidden="true">ONLINE BOOKSTORE</i>
-          
-           <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            
-            <button class="btn btn-success" type="submit">Search</button>
-          </form> 
-
-           <button mat-raised-button color="warn" routerLink="/login">login</button>
-        
-        </div>  
-  </nav>  
+<body>
+ <p>
+  <mat-toolbar color="warn">
+    <span><i class="fa fa-book  fa-2x" aria-hidden="true">ONLINE BOOKSTORE</i></span>
+    <span class="example-spacer"></span>
+    <form class="form-inline" action="/action_page.php">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-success" type="submit">Search</button>
+    </form> ||||
+    <button mat-raised-button color="btn-success" routerLink="/login">login</button>
+  </mat-toolbar>
+  </p>  
+     <!-- <mat-card class="picture">
+       
+      <img mat-card-image src="https://image.shutterstock.com/image-illustration/bookshelves-library-old-books-3d-260nw-1529567276.jpg"alt="Photo of a librar"> 
+      <!-- <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>  -->
+  
+           
    <!-- <div  *ngFor=" let book of books" > 
     <h2>{{ books.bookTitle }}</h2> 
     
   </div> -->
-  <div class="example-button-row" >
+  <!-- <div class="example-button-row" >
     <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/user">or go to member dashboard</button><br>
     <button mat-raised-button color="warn" style="width:410px; margin-top: 20px;" routerLink="/admin">or go to Admin</button>
   </div>
-  
+   -->
 <!--<div class="container-fluid padding">
   <div class="row welcome text-center">
     <div class="col-12">
@@ -50,25 +51,25 @@
             <div class="col-md-4"> 
               <hr class="light">
               <p>contacts </p>
-              <p>location </p> 
-              <p> email</p>
-              <p>city </p>
+              <p>Dar-es-salaam </p> 
+              <p> LMS335@gmail.com</p>
+              <p>Dar-es-salaam </p>
             </div> 
              
             <div class="col-md-4"> 
               <hr class="light">
-              <p>time </p>
-              <p>weekends </p> 
-              <p> email   </p>
-              <p>city </p>
+              <p>24 hours weekdays </p>
+              <p>12hours weekends </p> 
+              <p>LMS335@gmail.com </p>
+              <p>Dar-es-salaam </p>
             </div> 
             
             <div class="col-md-4"> 
               <hr class="light">
-              <p>contacts </p>
-              <p>location </p> 
-              <p> email</p>
-              <p>city </p>
+              <p>+255 902 455 677</p>
+              <p> +255 902 455 677</p> 
+              <p> +255 902 455 679</p>
+              <p>+255 902 455 678</p>
             </div> 
             <div class="col-12"> 
               <hr class="light"> 
@@ -77,7 +78,4 @@
           </div> 
         </div> 
       </footer>
-
-     
 </body>
-</html>

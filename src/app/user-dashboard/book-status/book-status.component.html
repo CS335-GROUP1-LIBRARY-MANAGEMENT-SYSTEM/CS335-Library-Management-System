@@ -1,0 +1,17 @@
+<div class="form">
+  <mat-card>
+    <div class="head">
+      <h1>Your Book Status</h1><span class="material-icons">
+      sentiment_very_satisfied
+      </span></div>
+    <div *ngIf="status; else NotMember" class="payment-details">
+      <div class="time"><h2>The Book Id : {{bookingDetails.bookId}}</h2></div>
+      <div class="time"><h2>Book Borrowed Date: {{bookingDetails.timeToTake * 1000 | date:'M/d/yy  h:mm a':'UTC'}}</h2></div>
+      <div class="time"><h2>Book Returning Date : {{bookingDetails.timeToReturn * 1000 | date:'M/d/yy  h:mm a':'UTC'}}</h2></div>
+      <div class="time"><h2>Days Remaining : {{(bookingDetails.timeToReturn  - bookingDetails.timeToTake)* 1000 | date:'d':'UTC'}}</h2></div>
+    </div>
+    <ng-template #NotMember>
+      <p>???</p>
+    </ng-template>
+  </mat-card>
+</div>

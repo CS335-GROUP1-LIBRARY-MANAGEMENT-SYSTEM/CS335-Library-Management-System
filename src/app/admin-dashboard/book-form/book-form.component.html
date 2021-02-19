@@ -1,17 +1,17 @@
 <div class="form">
-    <form [formGroup]="BookForm" (ngSubmit)="onSubmit()" novalidate>
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" novalidate>
       <h2>ADD BOOKS</h2>
         <div class="form-group">
           <mat-form-field appearance="outline" style="width:600px">
             <mat-label>booktitle</mat-label>
-            <input matInput  id="booktitle" formControlName="booktitle" width="200%" required>
-            <mat-error>please enter book namee</mat-error>
+            <input matInput  id="bookitle" formControlName="bookTitle" width="200%" required>
+            <mat-error>please enter book name</mat-error>
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field appearance="outline" style="width:600px">
             <mat-label>Author</mat-label>
-            <input matInput  formControlName="bookauthor" required>
+            <input matInput  formControlName="bookAuthor" required>
             <mat-error>please enter Author</mat-error>
             </mat-form-field>
         </div>
@@ -20,7 +20,7 @@
       <div class="form-group" >
         <mat-form-field appearance="outline" style="width:600px">
           <mat-label>Description</mat-label>
-          <input matInput  formControlName="bookdescr" required>
+          <input matInput  formControlName="bookDescription" required>
           <mat-error>Enter book description</mat-error>
         </mat-form-field>
       </div>
@@ -41,6 +41,16 @@
        (click)="Input.clear($event)" >remove</button>
         <ng-template #disabled>
           <button mat-flat-button style="margin-left: 30px"  disabled>remove</button></ng-template>
+      </div>
+
+      <div  class="spinner" *ngIf="isLoading">
+        <mat-progress-spinner
+          diameter="30"
+          class="example-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value">
+        </mat-progress-spinner>
       </div>
 
     <div class="example-button-row" >

@@ -1,0 +1,13 @@
+<div class="form">
+  <mat-card>
+    <div class="head">
+    <h1>Your Book Status</h1><span class="material-icons">
+      sentiment_very_satisfied
+      </span></div>
+    <div class="payment-details">
+      <div class="time"><h2>Book Borrowed Date: {{ borrowed | date }}</h2></div>
+      <div class="time"><h2>Book Returning Date :{{ expiring | date }}</h2></div>
+      <div class="time"><h2>Days Remaining : {{remaining}}</h2></div>
+    </div>
+  </mat-card>
+</div>

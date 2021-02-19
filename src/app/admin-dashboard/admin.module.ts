@@ -28,6 +28,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {ViewMembersComponent} from '../view-members/view-members.component';
+import { BorrowComponent } from '../borrow/borrow.component';
+import {MatStepperModule} from '@angular/material/stepper'
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const routes: Routes = [
   {path: '', redirectTo: 'librarian', pathMatch: 'full'},
@@ -41,7 +44,8 @@ const routes: Routes = [
       {path: 'books', component: BookFormComponent},
       {path: 'payments', component: UserPaymentsComponent},
       // {path: '**', component: SearchInputComponent},
-      {path: 'addMember', component: RegistrationComponent}
+      {path: 'addMember', component: RegistrationComponent},
+      {path:'borrow', component: BorrowComponent}
     ]}
 ];
 
@@ -52,6 +56,7 @@ const routes: Routes = [
     AdminBooksComponent,
     AdminPaymentsComponent,
     SearchInputComponent,
+    BorrowComponent
   ],
   imports: [
     CommonModule,
@@ -67,10 +72,12 @@ const routes: Routes = [
     MatFormFieldModule,
     NgbModule,
     MatInputModule,
+    MatStepperModule,
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatDatepickerModule
   ]
 })
 export class AdminModule { }

@@ -11,6 +11,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from'@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './auth/login/login.component';
@@ -28,8 +30,11 @@ import {WelcomeNoteComponent} from './welcome-note/welcome-note.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {MaterialFileInputModule} from 'ngx-material-file-input';
 import {FileUploadModule} from 'ng2-file-upload';
+import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 
+import {PaymentsComponent} from './user-dashboard/user-payments/payments/payments.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 const routes: Routes = [
 
@@ -51,7 +56,10 @@ const routes: Routes = [
     LandingPageComponent,
     ViewMembersComponent,
     BookFormComponent,
-    WelcomeNoteComponent
+    WelcomeNoteComponent,
+    PaymentsComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -62,7 +70,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
+    MatDatepickerModule,
     MatDividerModule,
+    MatStepperModule,
     MatIconModule,
     RouterModule.forRoot(routes),
     ToastrModule.forRoot(),
@@ -73,6 +83,8 @@ const routes: Routes = [
     Ng2SearchPipeModule,
     MaterialFileInputModule,
     FileUploadModule,
+    MatToolbarModule,
+    MatSelectModule
   ],
   providers: [
   ],
