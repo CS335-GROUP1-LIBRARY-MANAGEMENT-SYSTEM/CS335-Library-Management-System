@@ -45,7 +45,7 @@ const routes: Routes = [
       {path: 'view', component: ViewMembersComponent},
       {path: 'profile', component: UserInfoComponent},
       {path: 'books', component: BookFormComponent},
-      {path: 'payments', component: UserPaymentsComponent},
+      {path:'fines', component:UserPaymentsComponent},
       {path: 'addMember', component: RegistrationComponent},
       {path: 'taken', component: TakenComponent},
       {path: 'reserved', component: ReservedComponent}

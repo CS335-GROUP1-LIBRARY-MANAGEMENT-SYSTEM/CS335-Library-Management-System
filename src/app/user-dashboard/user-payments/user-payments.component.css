@@ -35,4 +35,5 @@
 }
 mat-card {
   display: flex;
+  margin:150px;
 }
