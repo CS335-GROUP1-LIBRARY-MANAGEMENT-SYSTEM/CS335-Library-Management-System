@@ -45,4 +45,8 @@ export class BookService {
   getAllTakenBook():Observable<Array<BookStatusModel>>{
     return this.http.get<Array<BookStatusModel>>(this.apiUrl+"/booking/getAllBooks/taken")
   }
+
+  assignBookToTaken(id:number):Observable<any>{
+    return this.http.post(this.apiUrl+"/booking/assignBook/"+id,null);
+  }
 }

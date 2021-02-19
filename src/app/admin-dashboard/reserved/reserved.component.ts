@@ -31,4 +31,15 @@ export class ReservedComponent implements OnInit {
     })
   }
 
+  assign(book: BookStatusModel) {
+    this.isLoading=true;
+    this.bookService.assignBookToTaken(book.bookingId).subscribe(()=>{
+      this.isLoading=false;
+      this.toastr.success("success assign book to "+book.username);
+      this.reservedBooks.filter(r=>r.bookingId!==book.bookingId)
+    },()=>{
+      this.isLoading=false;
+      this.toastr.error("error while loading content")
+    })
+  }
 }
