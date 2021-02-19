@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatSelectModule} from'@angular/material/select';
+import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './auth/login/login.component';
@@ -21,7 +21,10 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ViewMembersComponent } from './view-members/view-members.component';
+import {
+  DialogElementsExampleDialogComponent,
+  ViewMembersComponent
+} from './view-members/view-members.component';
 import {Auth2Guard} from './shared/auth2.guard';
 import {AuthGuard} from './shared/auth.guard';
 import { BookFormComponent } from './admin-dashboard/book-form/book-form.component';
@@ -37,6 +40,7 @@ import {PaymentsComponent} from './user-dashboard/user-payments/payments/payment
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const routes: Routes = [
 
@@ -60,6 +64,7 @@ const routes: Routes = [
     BookFormComponent,
     WelcomeNoteComponent,
     PaymentsComponent,
+    DialogElementsExampleDialogComponent
 
 
   ],
@@ -88,7 +93,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatGridListModule
   ],
   providers: [
   ],

@@ -1,0 +1,19 @@
+<h1 mat-dialog-title><b>Delete Member</b></h1>
+<div mat-dialog-content>Are you sure you want to delete this member? </div>
+<div mat-dialog-content>check the <b>username</b> na click its delete button then close </div><br>
+
+<div mat-dialog-content *ngFor="let member of members">
+  <mat-card style="margin-bottom: 10px">
+  <mat-chip-list>
+    <mat-chip>{{member.username}}</mat-chip>
+  </mat-chip-list>
+<div mat-dialog-actions>
+  <button (click)="deleteUser(member.id)" mat-button color="warn">delete</button>
+</div>
+  </mat-card>
+</div>
+
+<mat-spinner *ngIf="isLoading" size="10px" mode="indeterminate"></mat-spinner>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

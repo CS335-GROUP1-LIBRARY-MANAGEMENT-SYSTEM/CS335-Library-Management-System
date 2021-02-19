@@ -16,8 +16,7 @@
 }
 
 .content {
-  padding-right: 80%;
-
+margin: 30px;
 }
 .spinner{
   display: flex;

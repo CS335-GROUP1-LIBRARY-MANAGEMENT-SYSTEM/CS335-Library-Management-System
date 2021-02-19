@@ -13,8 +13,8 @@
   </form>
 </mat-card>
 
-<div>
-    <mat-card class="card" >
+
+
 
       <div  class="spinner" *ngIf="isLoading">
         <mat-progress-spinner
@@ -27,32 +27,32 @@
       </div>
 
       <div *ngFor='let member of members | filter:term'class="height">
-              <mat-card-header class="cardContent">
-                <div class="content">
-      <mat-card-title>{{member.fullName}}</mat-card-title>
-      <mat-card-subtitle>LB/{{member.id}}</mat-card-subtitle>
-      <mat-card-subtitle>{{member.email}}</mat-card-subtitle>
-      <mat-card-subtitle>{{member.phoneNumber}}</mat-card-subtitle>
-      <mat-card-subtitle>{{member.username}}</mat-card-subtitle>
-      <mat-card-subtitle>{{member.region}}</mat-card-subtitle>
-<mat-chip-list>
-  <mat-chip style="background-color: #3F51B5;color: white">{{member.role}}</mat-chip>
-</mat-chip-list>
-    </div>
-    <div>
+        <mat-card style="margin: 20px 20px 10px 20px">
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile >
+            <div >
+              <mat-card-title>{{member.fullName}}</mat-card-title>
+              <mat-card-subtitle>{{member.id}}</mat-card-subtitle>
+              <mat-card-subtitle>{{member.email}}</mat-card-subtitle>
+              <mat-card-subtitle>{{member.phoneNumber}}</mat-card-subtitle>
+              <mat-card-subtitle>{{member.username}}</mat-card-subtitle>
+              <mat-card-subtitle>{{member.region}}</mat-card-subtitle>
+              <mat-chip-list >
+                <mat-chip style="background-color: #3F51B5;color: white" *ngIf="member.role == 'USER'">member</mat-chip>
+              </mat-chip-list>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="button">
+              <button (click)="openDialog()" mat-fab color="warn" aria-label="button with a delete icon" matSuffix>
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        </mat-card>
+      </div>
 
-      <div class="button">
-        <button (click)="deleteUser(member.id)" mat-fab color="warn" aria-label="button with a delete icon" >
-          <mat-icon>delete</mat-icon>
-        </button>
 
-    </div>
-  </div>
 
-    </mat-card-header>
-  <mat-divider></mat-divider>
-
-    </div>
-  </mat-card>
-</div>
 

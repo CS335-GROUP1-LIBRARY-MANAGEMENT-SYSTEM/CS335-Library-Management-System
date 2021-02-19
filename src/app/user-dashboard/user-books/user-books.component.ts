@@ -34,6 +34,7 @@ export class UserBooksComponent implements OnInit {
     this.isLoading=true;
     this.bookService.getAllBooks().subscribe((data)=>{
       this.books=data;
+      console.log(this.books);
       this.isLoading=false
     })
   }
