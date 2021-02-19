@@ -1,6 +1,25 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+.book {
+  margin:1em;
+  padding: 5%;
+  display: inline-block;
+}
+
+.book > ul > div > li {
+
+  list-style:none;
+  padding-left:0pt;
+}
+
+#bookwrapper {
+  padding-left:0pt;
+}
+.form {
+  margin-left:10%;
+  margin-right:10%;
+}
 
 
 /* body { background:grey!important;} */
