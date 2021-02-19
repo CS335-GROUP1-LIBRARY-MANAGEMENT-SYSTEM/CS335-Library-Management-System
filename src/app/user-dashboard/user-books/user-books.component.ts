@@ -61,4 +61,14 @@ export class UserBooksComponent implements OnInit {
     })
 
   }
+
+  viewBookDetails(id: number) {
+    this.isLoading=true;
+    this.bookService.getBookDetails(id).subscribe((data)=>{
+      this.isLoading=false;
+      this.toastr.success("success to view user details")
+    },()=>{
+      this.toastr.error("fail to retrieve book details")
+    })
+  }
 }

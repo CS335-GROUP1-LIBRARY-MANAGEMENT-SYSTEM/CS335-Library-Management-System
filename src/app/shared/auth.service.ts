@@ -32,18 +32,12 @@ export class AuthService {
       }));
   }
 
-
+  deleteUser(id:number):Observable<any>{
+    return this.httpModule.delete(this.apiUrl+"/auth/delete/user/"+id)
+  }
 
   getJwtToken() {
     return this.localStorageService.retrieve('authenticationToken');
-  }
-
-  getUserName() {
-    return this.localStorageService.retrieve('username');
-  }
-
-  getExpirationTime() {
-    return this.localStorageService.retrieve('expiresAt');
   }
 
   isLoggedIn(): boolean {

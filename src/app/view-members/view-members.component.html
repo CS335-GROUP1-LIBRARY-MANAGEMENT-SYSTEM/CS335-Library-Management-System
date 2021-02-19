@@ -26,7 +26,7 @@
         </mat-progress-spinner>
       </div>
 
-      <div *ngFor='let member of members | filter:term' class="height">
+      <div *ngFor='let member of members | filter:term'class="height">
               <mat-card-header class="cardContent">
                 <div class="content">
       <mat-card-title>{{member.fullName}}</mat-card-title>
@@ -39,16 +39,10 @@
   <mat-chip style="background-color: #3F51B5;color: white">{{member.role}}</mat-chip>
 </mat-chip-list>
     </div>
-
     <div>
-      <div class="button">
-        <button mat-fab color="primary" aria-label="button with a delete icon" >
-          <mat-icon>create</mat-icon>
-        </button>
-      </div>
 
       <div class="button">
-        <button mat-fab color="warn" aria-label="button with a delete icon" >
+        <button (click)="deleteUser(member.id)" mat-fab color="warn" aria-label="button with a delete icon" >
           <mat-icon>delete</mat-icon>
         </button>
 

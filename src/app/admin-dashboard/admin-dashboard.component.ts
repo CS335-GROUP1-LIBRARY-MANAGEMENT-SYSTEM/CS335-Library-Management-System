@@ -28,7 +28,9 @@ const TREE_DATA: FoodNode[] = [
     children: [
       {name: 'View', url: '/admin/librarian/search'},
       {name: 'Add', url: '/admin/librarian/books'},
-      {name:'borrow', url:'/admin/librarian/borrow'}
+      {name:'reserved', url:'/admin/librarian/reserved'},
+      {name:'taken', url:'/admin/librarian/taken'}
+
     ]
   },
   {
@@ -45,7 +47,7 @@ const TREE_DATA: FoodNode[] = [
     children: [
       {name: 'View', url: '/admin/librarian/view'},
       {name: 'Add', url: '/admin/librarian/addMember'},
-      
+
     ]
   }
 ];

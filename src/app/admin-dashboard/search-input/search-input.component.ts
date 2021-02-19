@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import algoliasearch from 'algoliasearch/lite';
 import {FormControl, FormGroup, NgForm} from '@angular/forms';
 import {SearchService} from './search.service';
 import {BookModel} from '../../book/book';
@@ -33,12 +32,4 @@ onSubmit(): void {
     console.log(this.SearchInputForm.value);
     this.SearchInputForm.reset();
 }
-
-  editBook(book:BookModel) {
-    this.isLoading=true
-    this.bookService.editBookStatus(book.id).subscribe(()=>{
-      this.isLoading=false;
-      book.available=true;
-    })
-  }
 }
