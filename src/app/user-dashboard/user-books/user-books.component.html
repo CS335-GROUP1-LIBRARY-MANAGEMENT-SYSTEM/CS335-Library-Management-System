@@ -18,7 +18,7 @@
             </svg>
           </div>
           <div class="book-details">
-            <h2>{{ book.bookTitle }}</h2>
+            <h2 (click)="viewBookDetails(book.id)">{{ book.bookTitle }}</h2>
             <p>{{ book.description }}</p>
             <div *ngIf="book.available; else bookNotAvailable">
               <button (click)="booking(book)" mat-flat-button color="primary">Reserve</button>

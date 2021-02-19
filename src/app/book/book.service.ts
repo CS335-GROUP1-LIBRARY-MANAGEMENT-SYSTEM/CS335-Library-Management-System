@@ -5,6 +5,7 @@ import { BookModel } from './book';
 import { BookingModel } from './booking.model';
 import {LocalStorageService} from 'ngx-webstorage';
 import {BookStatusModel} from './book.status.model';
+import {Book} from '../book.model';
 
 @Injectable({
   providedIn: 'root'
@@ -50,5 +51,7 @@ export class BookService {
     return this.http.post(this.apiUrl+"/booking/assignBook/"+id,null);
   }
 
-
+  getBookDetails(id:number):Observable<Book>{
+    return this.http.get<Book>(this.apiUrl+"/booking/getBook/"+id)
+  }
 }
