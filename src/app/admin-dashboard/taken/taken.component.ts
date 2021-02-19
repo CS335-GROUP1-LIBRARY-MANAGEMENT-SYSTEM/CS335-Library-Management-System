@@ -33,4 +33,15 @@ export class TakenComponent implements OnInit {
 
   }
 
+  editBook(book: BookStatusModel) {
+    this.isLoading=true;
+    this.bookService.editBookStatus(book.bookId).subscribe(()=>{
+      this.isLoading=false;
+      this.toastr.success("success assign book to "+book.username);
+      this.ngOnInit();
+    },()=>{
+      this.isLoading=false;
+      this.toastr.error("error while loading content")
+    })
+  }
 }

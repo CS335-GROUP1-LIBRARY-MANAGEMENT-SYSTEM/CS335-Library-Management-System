@@ -20,7 +20,7 @@
         <div class="book-details">
           <h2>Username: {{book.username}}</h2>
           <h3>Book ID: {{book.bookId}}</h3>
-          <button  mat-flat-button color="primary">Make it available</button>
+          <button (click)="editBook(book)" mat-flat-button color="primary">Make it available</button>
         </div>
       </mat-card>
     </div>
