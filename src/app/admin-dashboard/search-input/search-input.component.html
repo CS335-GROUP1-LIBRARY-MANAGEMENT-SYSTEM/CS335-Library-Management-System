@@ -18,6 +18,16 @@
     <h1>{{book.bookTitle}}</h1>
     <h2>{{book.author}}</h2>
     <p>{{book.description}}</p>
+    <mat-chip-list>
+      <mat-chip style="background-color: #4F81F7;color: white" *ngIf="book.available">Available</mat-chip>
+    </mat-chip-list>
+
+    <mat-chip-list>
+      <mat-chip *ngIf="!book.available">this book is reserved or issued</mat-chip>
+      <div *ngIf="!book.available">
+        <button mat-raised-button color="primary" style="width:410px" (click)="editBook(book)">EDIT BOOK TO AVAILABLE</button><br>
+      </div>
+    </mat-chip-list>
   </mat-card>
 </div>
   <div class="spinner">

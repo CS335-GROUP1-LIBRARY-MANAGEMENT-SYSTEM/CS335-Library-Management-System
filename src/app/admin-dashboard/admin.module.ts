@@ -31,6 +31,7 @@ import {ViewMembersComponent} from '../view-members/view-members.component';
 import { BorrowComponent } from '../borrow/borrow.component';
 import {MatStepperModule} from '@angular/material/stepper'
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatChipsModule} from '@angular/material/chips';
 import { ReservedComponent } from './reserved/reserved.component';
 import { TakenComponent } from './taken/taken.component';
 
@@ -82,7 +83,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatChipsModule
   ]
 })
 export class AdminModule { }

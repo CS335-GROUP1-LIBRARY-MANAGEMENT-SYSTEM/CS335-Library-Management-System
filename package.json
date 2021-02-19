@@ -28,7 +28,9 @@
     "bootstrap": "^4.6.0",
     "font-awesome": "^4.7.0",
     "instantsearch.js": "^3.7.0",
+    "ng2-file-upload": "^1.4.0",
     "ng2-search-filter": "^0.5.1",
+    "ngx-material-file-input": "^2.1.1",
     "ngx-toastr": "^13.2.0",
     "ngx-webstorage": "^7.0.1",
     "npm-install-missing": "^0.1.4",
@@ -56,6 +58,5 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
-  },
-  "optionalDependencies": {}
+  }
 }

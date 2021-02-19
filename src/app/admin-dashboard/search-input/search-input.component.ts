@@ -24,6 +24,7 @@ SearchInputForm = new FormGroup({
     this.isLoading = true;
     this.Ss.getBooks().subscribe((response) => {
   this.Books = response;
+  console.log(this.Books);
   this.isLoading = false;
 });
   }

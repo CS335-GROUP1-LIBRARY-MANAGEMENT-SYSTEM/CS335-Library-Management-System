@@ -7,6 +7,7 @@ import {User} from './user.model';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import {ToastrService} from 'ngx-toastr';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class RegistrationComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,
           private configservice: ConfigService,
           public route: Router,private localStorage:LocalStorageService,
-              private toastr:ToastrService) {
+              private toastr:ToastrService, public snack: MatSnackBar) {
 
     this.userModel={
 
@@ -61,7 +62,7 @@ export class RegistrationComponent implements OnInit {
     })
   }
   get f(){
-    return(this.registerForm.controls)
+    return(this.registerForm.controls);
   }
   onSubmit(){
     this.isLoading=true;
@@ -82,24 +83,30 @@ export class RegistrationComponent implements OnInit {
       this.userModel.role=this.assignRole;
       this.configservice.createUser(this.userModel).subscribe(()=>{
         this.isLoading=false;
-        this.route.navigateByUrl('/admin')
+        // this.route.navigateByUrl('/admin')
+        this.snack.open('you have Successfully Added a Librarian', 'Ok', {duration: 3000});
+        this.registerForm.resetForm();
       },(err)=>{
         this.isLoading=false;
-        this.toastr.error("fail to assign new book !!! try again")
-        console.log(err)
-      })
+        // this.toastr.error("fail to assign new book !!! try again")
+        this.snack.open('Failed to Add a librarian', 'Ok', {duration: 3000});
+        console.log(err);
+      });
 
     }else {
       this.assignRole="USER"
       this.userModel.role=this.assignRole;
       this.configservice.createUser(this.userModel).subscribe(()=>{
         this.isLoading=false
-        this.route.navigateByUrl('/admin')
+        // this.route.navigateByUrl('/admin')
+        this.snack.open('you have Successfully Added a member', 'Ok', {duration: 3000});
+        this.registerForm.reset();
       },(err)=>{
         this.isLoading=false;
-        this.toastr.error("fail to assign new user !!! try again")
-        console.log(err)
-      })
+        // this.toastr.error("fail to assign new user !!! try again")
+        this.snack.open('Failed to Add a member', 'Ok', {duration: 3000});
+        console.log(err);
+      });
     }
 
   }

@@ -28,11 +28,15 @@ import { BookFormComponent } from './admin-dashboard/book-form/book-form.compone
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {WelcomeNoteComponent} from './welcome-note/welcome-note.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {MaterialFileInputModule} from 'ngx-material-file-input';
+import {FileUploadModule} from 'ng2-file-upload';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 
 import {PaymentsComponent} from './user-dashboard/user-payments/payments/payments.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatChipsModule} from '@angular/material/chips';
 
 const routes: Routes = [
 
@@ -56,8 +60,8 @@ const routes: Routes = [
     BookFormComponent,
     WelcomeNoteComponent,
     PaymentsComponent,
-  
-   
+
+
   ],
   imports: [
     BrowserModule,
@@ -79,8 +83,12 @@ const routes: Routes = [
     NgbModule,
     MatProgressSpinnerModule,
     Ng2SearchPipeModule,
+    MaterialFileInputModule,
+    FileUploadModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers: [
   ],
