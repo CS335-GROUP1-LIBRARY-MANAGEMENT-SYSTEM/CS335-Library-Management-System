@@ -1,50 +1,18 @@
 .example-spacer {
   flex: 1 1 auto;
 }
-.book {
+
+.example-card {
+  max-width: 400px;
   margin:1em;
   padding: 5%;
   display: inline-block;
+  flex: auto;
+  
 }
 
-.book > ul > div > li {
-
-  list-style:none;
-  padding-left:0pt;
+.example-header-image {
+ 
+  background-size: cover;
 }
 
-#bookwrapper {
-  padding-left:0pt;
-}
-.form {
-  margin-left:10%;
-  margin-right:10%;
-}
-
-
-/* body { background:grey!important;} */
-/* ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  } */
-  
-  
-  /* li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
-   */
