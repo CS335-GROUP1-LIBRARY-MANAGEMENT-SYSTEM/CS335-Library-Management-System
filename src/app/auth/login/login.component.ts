@@ -6,6 +6,7 @@ import {ToastrService} from 'ngx-toastr';
 import {LocalStorageService} from 'ngx-webstorage';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -26,14 +27,19 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder
               ,private authService:AuthService,private router:Router,
               private toastr:ToastrService,private activeRoute:ActivatedRoute,
-              private localStorageService:LocalStorageService) { }
+              private localStorageService:LocalStorageService,
+              public snack: MatSnackBar) { }
 
   ngOnInit(): void {
 
     this.loginForm=this.formBuilder.group({
       username:['',Validators.required],
       password:['',Validators.required]
-    })
+    });
+    this.snack.open('if your not a member, i.e you dont have the credentials to login. Reach out to our library' + ' '+
+      'and register yourself.' +
+      '  ' + ' ' +
+      'YOUR MOST WELCOME', 'Ok', { verticalPosition: 'top', horizontalPosition: 'end', duration: 500000});
   }
 
   get f(){
