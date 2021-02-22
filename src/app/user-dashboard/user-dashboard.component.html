@@ -2,9 +2,12 @@
   <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>{{username}}</span>
+  <span>{{username}}</span> &nbsp; - &nbsp;
+  <mat-chip-list>
+    <mat-chip>{{role}}</mat-chip>
+  </mat-chip-list>
   <span class="example-spacer"></span>
-  
+
   <button mat-raised-button color="success" (click)="onLogout()">logout
     <mat-icon>person</mat-icon>
   </button>

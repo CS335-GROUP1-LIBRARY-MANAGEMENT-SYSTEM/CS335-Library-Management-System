@@ -23,6 +23,7 @@ import { WelcomeNoteComponent } from '../welcome-note/welcome-note.component';
 import {ToastrModule} from 'ngx-toastr';
 import { PaymentsComponent } from './user-payments/payments/payments.component';
 import { BookStatusComponent } from './book-status/book-status.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -68,6 +69,7 @@ const routes: Routes = [
     NgbModule,
     MatInputModule,
     MatProgressSpinnerModule,
+    MatChipsModule,
   ]
 })
 export class UserModule { }

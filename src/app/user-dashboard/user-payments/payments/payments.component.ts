@@ -10,14 +10,14 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class PaymentsComponent implements OnInit {
 
  borrowed = new Date(2021, 2, 12);
- expiring = new Date(2021, 2, 21);
+ expiring = new Date(2021, 2, 26);
 
  remaining = this.expiring.getDate() - this.borrowed.getDate();
 
-  constructor() { 
-    
+  constructor() {
 
-    
+
+
 
   }
 

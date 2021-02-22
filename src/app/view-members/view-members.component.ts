@@ -60,6 +60,7 @@ export class DialogElementsExampleDialogComponent implements OnInit{
     this.viewMember.getMembers().subscribe(member => {
       this.isLoading = false;
       this.members = member;
+      console.log(member);
     });
   }
   deleteUser(id:number) {

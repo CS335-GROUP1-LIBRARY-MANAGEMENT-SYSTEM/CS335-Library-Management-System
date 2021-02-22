@@ -54,6 +54,7 @@ interface CheckFlatNode {
 })
 export class UserDashboardComponent implements OnInit {
   username:string;
+  role: string;
   opened: boolean;
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -74,6 +75,7 @@ export class UserDashboardComponent implements OnInit {
   constructor(private localStorage:LocalStorageService, private router:Router) {
     this.dataSource.data = TREE_DATA;
     this.username=this.localStorage.retrieve('username');
+    this.role = this.localStorage.retrieve('role');
   }
   hasChild = (_: number, node: CheckFlatNode) => node.expandable;
   ngOnInit(): void {
