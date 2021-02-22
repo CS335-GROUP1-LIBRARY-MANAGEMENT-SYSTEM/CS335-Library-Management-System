@@ -9,6 +9,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 export class WelcomeNoteComponent implements OnInit {
   name: string;
 
+
   constructor(private localStorage: LocalStorageService) {
     this.name = this.localStorage.retrieve('username');
   }

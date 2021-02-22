@@ -22,29 +22,29 @@ export class TakenComponent implements OnInit {
     searchInput: new FormControl('')
   });
   term: any;
-  constructor(private bookService:BookService,private  toastr:ToastrService) { }
+  constructor(private bookService: BookService, private  toastr: ToastrService) { }
 
   ngOnInit(): void {
 
-    this.isLoading=true;
-    this.bookService.getAllTakenBook().subscribe((data)=>{
-      this.isLoading=false;
-      this.takenBooks=data;
+    this.isLoading = true;
+    this.bookService.getAllTakenBook().subscribe((data) => {
+      this.isLoading = false;
+      this.takenBooks = data;
       console.log(this.takenBooks);
-    },()=>{
-      this.isLoading=false;
-      this.toastr.error("error while loading content")
-    })
+    }, () => {
+      this.isLoading = false;
+      this.toastr.error('error while loading content');
+    });
 
   }
 
   editBook(book: BookStatusModel) {
     this.isLoading=true;
-    this.bookService.editBookStatus(book.bookId).subscribe(()=>{
-      this.isLoading=false;
+    this.bookService.editBookStatus(book.bookId).subscribe(() => {
+      this.isLoading = false;
       this.toastr.success("You made a book available");
       this.ngOnInit();
-    },()=>{
+    }, () => {
       this.isLoading=false;
       this.toastr.error('error while making book available');
     });

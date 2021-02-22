@@ -62,6 +62,7 @@ interface CheckFlatNode {
 export class AdminDashboardComponent implements OnInit {
   username:string;
   opened: boolean;
+  role: string;
   private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0, name: node.name,
@@ -80,7 +81,8 @@ export class AdminDashboardComponent implements OnInit {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
   constructor(private localStorage:LocalStorageService, private router:Router) {
     this.dataSource.data = TREE_DATA;
-    this.username=this.localStorage.retrieve('username');
+    this.username = this.localStorage.retrieve('username');
+    this.role = this.localStorage.retrieve('role');
   }
   hasChild = (_: number, node: CheckFlatNode) => node.expandable;
   ngOnInit(): void {
